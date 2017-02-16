@@ -1,22 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 import P1Trade from './p1Trade';
 
 class Player1 extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      authority: 50,
-      trade: 0,
-      combat: 0
-    }
-  }
 
   handleAuthority() {
     // console.log('You pressed!');
+  }
+
+  handleTrade() {
+    Actions.p1Trade();
   }
 
   render() {
@@ -27,14 +23,24 @@ class Player1 extends Component {
         </View>
         <View style={styles.playerStats}>
           <View style={styles.statsLeft}>
-            <P1Trade />
+            <TouchableHighlight
+              style={styles.authority}
+              onPress={() => this.handleAuthority()}
+              underlayColor='#69F0AE'
+              activeOpacity={0.9}>
+              <Text style={styles.statsText}>{this.props.authority}</Text>
+            </TouchableHighlight>
           </View>
           <View style={styles.statsRight}>
-            <TouchableHighlight style={styles.trade}>
-              <Text style={styles.statsText}>{this.state.trade}</Text>
+            <TouchableHighlight
+              style={styles.trade}
+              onPress={() => this.handleTrade()}
+              underlayColor='#FFF176'
+              activeOpacity={0.9}>
+              <Text style={styles.statsText}>{this.props.trade}</Text>
             </TouchableHighlight>
             <TouchableHighlight style={styles.combat}>
-              <Text style={styles.statsText}>{this.state.combat}</Text>
+              <Text style={styles.statsText}>{this.props.combat}</Text>
             </TouchableHighlight>
           </View>
         </View>
@@ -94,10 +100,13 @@ const styles = StyleSheet.create({
   },
 });
 
-function MapStateToProps(state) {
+function mapStateToProps(state) {
   return {
-    name1: state.playerNames.name1
-  }
+    name1: state.playerNames.name1,
+    authority: state.playerStats.p1.authority,
+    trade: state.playerStats.p1.trade,
+    combat: state.playerStats.p1.combat
+  };
 }
 
-export default connect(MapStateToProps, null)(Player1);
+export default connect(mapStateToProps, null)(Player1);

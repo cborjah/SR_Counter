@@ -3,16 +3,6 @@ import { connect } from 'react-redux';
 import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
 
 class Player2 extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      authority: 50,
-      trade: 0,
-      combat: 0
-    }
-  }
-
   render() {
     return (
       <View style={styles.player2}>
@@ -22,15 +12,15 @@ class Player2 extends Component {
         <View style={styles.playerStats}>
           <View style={styles.statsLeft}>
             <TouchableHighlight style={styles.authority}>
-              <Text style={styles.statsText}>{this.state.authority}</Text>
+              <Text style={styles.statsText}>{this.props.authority}</Text>
             </TouchableHighlight>
           </View>
           <View style={styles.statsRight}>
             <TouchableHighlight style={styles.trade}>
-              <Text style={styles.statsText}>{this.state.trade}</Text>
+              <Text style={styles.statsText}>{this.props.trade}</Text>
             </TouchableHighlight>
             <TouchableHighlight style={styles.combat}>
-              <Text style={styles.statsText}>{this.state.combat}</Text>
+              <Text style={styles.statsText}>{this.props.combat}</Text>
             </TouchableHighlight>
           </View>
         </View>
@@ -90,10 +80,13 @@ const styles = StyleSheet.create({
   },
 });
 
-function MapStateToProps(state) {
+function mapStateToProps(state) {
   return {
-    name2: state.playerNames.name2
-  }
+    name2: state.playerNames.name2,
+    authority: state.playerStats.p2.authority,
+    trade: state.playerStats.p2.trade,
+    combat: state.playerStats.p2.combat
+  };
 }
 
-export default connect(MapStateToProps, null)(Player2)
+export default connect(mapStateToProps, null)(Player2);
