@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, StyleSheet, TextInput, TouchableHighlight } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 import { setNames } from '../actions/index';
 
 class GameSetup extends Component {
@@ -14,7 +15,8 @@ class GameSetup extends Component {
   }
 
   handleOnPress() {
-
+    this.props.setNames(this.state.input1, this.state.input2);
+    Actions.mainScreen({ type: 'replace' });
   }
 
   render() {

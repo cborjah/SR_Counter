@@ -6,6 +6,7 @@ import { View, Text } from 'react-native';
 
 import reducers from './reducers';
 import GameSetup from './containers/gameSetup';
+import MainScreen from './containers/mainScreen';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
@@ -21,6 +22,12 @@ export default class App extends Component {
               component={GameSetup}
               hideNavBar={true}
               initial
+            />
+
+            <Scene
+              key="mainScreen"
+              component={MainScreen}
+              hideNavBar={true}
             />
 
           </Scene>
