@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, StyleSheet, TextInput, TouchableHighlight } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import { setNames } from '../actions/index';
+import { setNames } from '../actions/gameSetup';
 
 class GameSetup extends Component {
   constructor(props) {

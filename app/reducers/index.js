@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import GameSetupReducer from './reducer_gameSetup';
-import PlayerStats from './reducer_playerStats';
+import Player1Stats from './reducer_player1Stats';
+import Player2Stats from './reducer_player2Stats';
 
 const rootReducer = combineReducers({
   playerNames: GameSetupReducer,
-  playerStats: PlayerStats
+  player1Stats: Player1Stats,
+  player2Stats: Player2Stats
 });
 
 export default rootReducer;

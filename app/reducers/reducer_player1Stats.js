@@ -1,0 +1,16 @@
+import { SET_TRADE_P1 } from '../actions/types';
+
+const INITIAL_STATE = {
+  authority: 50,
+  trade: 0,
+  combat: 0
+}
+
+export default function(state = INITIAL_STATE, action) {
+  switch(action.type) {
+    case SET_TRADE_P1:
+    return { ...state, trade: action.payload };
+    default:
+      return state;
+  }
+}

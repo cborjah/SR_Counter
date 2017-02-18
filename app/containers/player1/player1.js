@@ -103,9 +103,9 @@ const styles = StyleSheet.create({
 function mapStateToProps(state) {
   return {
     name1: state.playerNames.name1,
-    authority: state.playerStats.p1.authority,
-    trade: state.playerStats.p1.trade,
-    combat: state.playerStats.p1.combat
+    authority: state.player1Stats.authority,
+    trade: state.player1Stats.trade,
+    combat: state.player1Stats.combat
   };
 }
 
