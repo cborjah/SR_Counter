@@ -1,36 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, StyleSheet, Button, TouchableHighlight } from 'react-native';
-import { setTradeP1 } from '../../actions/player1';
+import { minusTradeP1, addTradeP1 } from '../../actions/player1';
 
 class P1Trade extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      tempTrade: 0
-    }
-  }
+  // handleSubtraction() {
+  //   if(this.state.tempTrade > 0) {
+  //     this.setState({ tempTrade: this.state.tempTrade - 1 });
+  //     setTimeout(() => {
+  //       this.props.setTradeP1(this.state.tempTrade);
+  //     }, 200);
+  //   }
+  // }
 
-  componentDidMount() {
-    this.setState({ tempTrade: this.props.trade });
-  }
-
-  handleSubtraction() {
-    if(this.state.tempTrade > 0) {
-      this.setState({ tempTrade: this.state.tempTrade - 1 });
-      setTimeout(() => {
-        this.props.setTradeP1(this.state.tempTrade);
-      }, 200);
-    }
-  }
-
-  handleAddition() {
-    this.setState({ tempTrade: this.state.tempTrade + 1 });
-    setTimeout(() => {
-      this.props.setTradeP1(this.state.tempTrade);
-    }, 200);
-  }
+  // handleAddition() {
+  //   this.setState({ tempTrade: this.state.tempTrade + 1 });
+  //   setTimeout(() => {
+  //     this.props.setTradeP1(this.state.tempTrade);
+  //   }, 200);
+  // }
 
   render() {
     return (
@@ -40,18 +29,18 @@ class P1Trade extends Component {
             <Text style={styles.minus}>-</Text>
           </TouchableHighlight>
         </View> */}
-        <TouchableHighlight style={styles.button} onPress={() => this.handleSubtraction()}>
+        <TouchableHighlight style={styles.button} onPress={() => this.props.minusTradeP1()}>
           <Text style={styles.minus}>-</Text>
         </TouchableHighlight>
         <View style={styles.trade}>
-          <Text style={styles.text}>{this.state.tempTrade}</Text>
+          <Text style={styles.text}>{this.props.trade}</Text>
         </View>
         {/* <View style={styles.button}>
           <TouchableHighlight onPress={() => this.handleAddition()}>
             <Text style={styles.plus}>+</Text>
           </TouchableHighlight>
         </View> */}
-        <TouchableHighlight style={styles.button} onPress={() => this.handleAddition()}>
+        <TouchableHighlight style={styles.button} onPress={() => this.props.addTradeP1()}>
           <Text style={styles.plus}>+</Text>
         </TouchableHighlight>
       </View>
@@ -111,4 +100,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { setTradeP1 })(P1Trade);
+export default connect(mapStateToProps, { minusTradeP1, addTradeP1 })(P1Trade);

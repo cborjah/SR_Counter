@@ -1,8 +1,13 @@
-import { SET_TRADE_P1 } from './types';
+import { MINUS_TRADE_P1, ADD_TRADE_P1 } from './types';
 
-export function setTradeP1(trade) {
+export function minusTradeP1() {
   return {
-    type: SET_TRADE_P1,
-    payload: trade
-  }
+    type: MINUS_TRADE_P1
+  };
+}
+
+export function addTradeP1() {
+  return {
+    type: ADD_TRADE_P1
+  };
 }
