@@ -9,7 +9,10 @@ import Player2 from '../containers/player2/player2';
 const MainScreen = () => {
   return (
     <View style={styles.container}>
-      <ScrollableTabView renderTabBar={() => <DefaultTabBar tabStyle={{ paddingBottom: 0 }} underlineStyle={{ width: 0 }}/>} tabBarPosition='bottom'>
+      <ScrollableTabView
+        renderTabBar={() => <DefaultTabBar tabStyle={{ paddingBottom: 0, backgroundColor: '#424242', height: 50 }} underlineStyle={{ width: 0 }} activeTextColor='#01579B' inactiveTextColor='white'/>}
+        tabBarPosition='bottom'
+        style={{ backgroundColor: '#424242' }}>
         <Player1 tabLabel='Player 1'/>
         <Player2 tabLabel='Player 2'/>
       </ScrollableTabView>
@@ -21,10 +24,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  // tabView: {
-  //   paddingBottom: 0,
-  //   padding: 0,
-  // }
 });
 
 export default MainScreen;

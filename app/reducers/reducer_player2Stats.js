@@ -1,4 +1,4 @@
-import { SET_TRADE_P2 } from '../actions/types';
+import { MINUS_TRADE_P2, ADD_TRADE_P2, MINUS_COMBAT_P2, ADD_COMBAT_P2 } from '../actions/types';
 
 const INITIAL_STATE = {
   authority: 50,
@@ -8,8 +8,22 @@ const INITIAL_STATE = {
 
 export default function(state = INITIAL_STATE, action) {
   switch(action.type) {
-    case SET_TRADE_P2:
-    return { ...state, trade: action.payload };
+    case MINUS_TRADE_P2:
+      if(state.trade > 0) {
+        return { ...state, trade: state.trade - 1};
+      } else {
+        return state;
+      }
+    case ADD_TRADE_P2:
+      return { ...state, trade: state.trade + 1}
+    case MINUS_COMBAT_P2:
+      if(state.combat > 0) {
+        return { ...state, combat: state.combat - 1};
+      } else {
+        return state;
+      }
+    case ADD_COMBAT_P2:
+      return { ...state, combat: state.combat + 1};
     default:
       return state;
   }
