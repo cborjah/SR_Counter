@@ -9,6 +9,10 @@ import P1Combat from './p1Combat';
 import AttackButton from '../attackButton';
 
 class Player1 extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   handleAuthority() {
     // Navigate to edit authority scene
   }
@@ -37,7 +41,10 @@ class Player1 extends Component {
                 <P1Combat />
               </View>
               <View>
-                <AttackButton setPage={() => this.viewPager.setPage(0)}/>
+                <AttackButton setPage={() => {
+                  this.props.changeTab();
+                  this.viewPager.setPage(0);
+                }}/>
               </View>
             </IndicatorViewPager>
           </View>
