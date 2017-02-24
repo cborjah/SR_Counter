@@ -1,4 +1,4 @@
-import { MINUS_TRADE_P1, ADD_TRADE_P1, MINUS_COMBAT_P1, ADD_COMBAT_P1 } from './types';
+import { MINUS_TRADE_P1, ADD_TRADE_P1, MINUS_COMBAT_P1, ADD_COMBAT_P1, P1_ATTACKS } from './types';
 
 export function minusTradeP1() {
   return {
@@ -22,4 +22,11 @@ export function addCombatP1() {
   return {
     type: ADD_COMBAT_P1
   };
+}
+
+export function p1Attacks(combatPoints) {
+  return {
+    type: P1_ATTACKS,
+    payload: combatPoints
+  }
 }

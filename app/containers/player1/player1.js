@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import { IndicatorViewPager } from 'rn-viewpager';
 
 import P1Trade from './p1Trade';
 import P1Combat from './p1Combat';
+import AttackButton from '../attackButton';
 
 class Player1 extends Component {
   handleAuthority() {
@@ -29,7 +31,15 @@ class Player1 extends Component {
           </View>
           <View style={styles.statsBottom}>
             <P1Trade />
-            <P1Combat />
+            <IndicatorViewPager ref={viewPager => this.viewPager = viewPager} style={{ flex: 1 }}>
+            {/* NOTE: ref={viewPager => this.viewPager = viewPager} allows you to use this.viewPager.setPage(). This also works for ViewPagerAndroid.*/}
+              <View style={{ flex: 1 }}>
+                <P1Combat />
+              </View>
+              <View>
+                <AttackButton setPage={() => this.viewPager.setPage(0)}/>
+              </View>
+            </IndicatorViewPager>
           </View>
         </View>
       </View>
@@ -51,7 +61,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   playerNameText: {
-    fontSize:20,
+    fontSize: 20,
     fontWeight: 'bold',
     color: 'white',
   },
@@ -76,7 +86,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#757575',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  }
 });
 
 function mapStateToProps(state) {

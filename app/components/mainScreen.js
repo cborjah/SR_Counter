@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, StyleSheet } from 'react-native';
 import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
@@ -6,18 +6,21 @@ import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-vi
 import Player1 from '../containers/player1/player1';
 import Player2 from '../containers/player2/player2';
 
-const MainScreen = () => {
-  return (
-    <View style={styles.container}>
-      <ScrollableTabView
-        renderTabBar={() => <DefaultTabBar tabStyle={{ paddingBottom: 0, backgroundColor: '#424242', height: 50 }} underlineStyle={{ width: 0 }} activeTextColor='#01579B' inactiveTextColor='white'/>}
-        tabBarPosition='bottom'
-        style={{ backgroundColor: '#424242' }}>
-        <Player1 tabLabel='Player 1'/>
-        <Player2 tabLabel='Player 2'/>
-      </ScrollableTabView>
-    </View>
-  );
+class MainScreen extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <ScrollableTabView
+          renderTabBar={() => <DefaultTabBar tabStyle={{ paddingBottom: 0, backgroundColor: '#424242', height: 50 }} underlineStyle={{ width: 0 }} activeTextColor='#01579B' inactiveTextColor='white'/>}
+          tabBarPosition='bottom'
+          style={{ backgroundColor: '#424242' }}
+          locked={true}>
+          <Player1 tabLabel={this.props.name1}/>
+          <Player2 tabLabel={this.props.name2}/>
+        </ScrollableTabView>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -26,4 +29,11 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MainScreen;
+function mapStateToProps(state) {
+  return {
+    name1: state.playerNames.name1,
+    name2: state.playerNames.name2,
+  };
+}
+
+export default connect(mapStateToProps, null)(MainScreen);
