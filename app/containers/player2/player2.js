@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
+import { IndicatorViewPager } from 'rn-viewpager';
 
 import P2Trade from './p2Trade';
 import P2Combat from './p2Combat';
+import AttackButton from '../attackButton';
 
 class Player2 extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  handleAuthority() {
+    // Navigate to edit authority scene
+  }
+
   render() {
     return (
       <View style={styles.player2}>
@@ -14,13 +24,32 @@ class Player2 extends Component {
         </View>
         <View style={styles.playerStats}>
           <View style={styles.statsTop}>
-            <TouchableHighlight style={styles.authority}>
+            <TouchableHighlight
+              style={styles.authority}
+              onPress={() => this.handleAuthority()}
+              underlayColor='#69F0AE'
+              activeOpacity={0.9}>
               <Text style={styles.statsText}>{this.props.authority}</Text>
             </TouchableHighlight>
           </View>
           <View style={styles.statsBottom}>
             <P2Trade />
-            <P2Combat />
+            <IndicatorViewPager ref={viewPager => this.viewPager = viewPager} style={{ flex: 1 }}>
+            {/* NOTE: ref={viewPager => this.viewPager = viewPager} allows you to use this.viewPager.setPage(). This also works for ViewPagerAndroid.*/}
+              <View style={{ flex: 1 }}>
+                <P2Combat />
+              </View>
+              <View>
+                <AttackButton
+                  combatPoints={this.props.combat}
+                  p1={false}
+                  p2={true}
+                  setPage={() => {
+                    this.props.changeTab();
+                    this.viewPager.setPage(0);
+                  }}/>
+              </View>
+            </IndicatorViewPager>
           </View>
         </View>
       </View>
@@ -85,7 +114,6 @@ function mapStateToProps(state) {
   return {
     name2: state.playerNames.name2,
     authority: state.player2Stats.authority,
-    trade: state.player2Stats.trade,
     combat: state.player2Stats.combat
   };
 }

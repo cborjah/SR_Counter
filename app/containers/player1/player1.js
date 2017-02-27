@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
-import { Actions } from 'react-native-router-flux';
 import { IndicatorViewPager } from 'rn-viewpager';
 
 import P1Trade from './p1Trade';
@@ -41,10 +40,14 @@ class Player1 extends Component {
                 <P1Combat />
               </View>
               <View>
-                <AttackButton setPage={() => {
-                  this.props.changeTab();
-                  this.viewPager.setPage(0);
-                }}/>
+                <AttackButton
+                  combatPoints={this.props.combat}
+                  p1={true}
+                  p2={false}
+                  setPage={() => {
+                    this.props.changeTab();
+                    this.viewPager.setPage(0);
+                  }}/>
               </View>
             </IndicatorViewPager>
           </View>
@@ -100,6 +103,7 @@ function mapStateToProps(state) {
   return {
     name1: state.playerNames.name1,
     authority: state.player1Stats.authority,
+    combat: state.player1Stats.combat
   };
 }
 
