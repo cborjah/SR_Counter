@@ -8,26 +8,21 @@ import { p2Attacks } from '../actions/player2';
 class AttackButton extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      p1Attacking: false,
-      p2Attacing: false
-    }
   }
 
   handleAttack() {
     // Win Condition Added
-    // Needs to reset state when game ends
+    // Needs to reset state when game ends.
     if(this.props.p1) {
-      if((this.props.p2Authority - this.props.combatPoints) <= 0) {
-        Actions.gameSetup({ type: 'replace' });
+      if(this.props.p2Authority - this.props.combatPoints <= 0) {
+        Actions.winScreen({ type: 'replace', winner: this.props.name1 });
       } else {
         this.props.p1Attacks(this.props.combatPoints);
         this.props.setPage();
       }
     } else if (this.props.p2) {
-      if((this.props.p1Authority - this.props.combatPoints) <= 0) {
-        Actions.gameSetup({ type: 'replace' });
+      if(this.props.p1Authority - this.props.combatPoints <= 0) {
+        Actions.winScreen({ type: 'replace', winner: this.props.name2 });
       } else {
         this.props.p2Attacks(this.props.combatPoints);
         this.props.setPage();
@@ -65,6 +60,8 @@ function mapStateToProps(state) {
   return {
     p1Authority: state.player1Stats.authority,
     p2Authority: state.player1Stats.authority,
+    name1: state.playerNames.name1,
+    name2: state.playerNames.name2
   }
 }
 

@@ -8,6 +8,7 @@ import reducers from './reducers';
 import GameSetup from './containers/gameSetup';
 import MainScreen from './components/mainScreen';
 import P1Trade from './containers/player1/p1Trade';
+import WinScreen from './components/winScreen';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
@@ -35,6 +36,13 @@ export default class App extends Component {
               key="p1Trade"
               component={P1Trade}
               hideNavBar={true}
+            />
+
+            <Scene
+              key="winScreen"
+              component={WinScreen}
+              hideNavBar={true}
+              winner={''}
             />
 
           </Scene>
