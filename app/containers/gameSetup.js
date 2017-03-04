@@ -10,7 +10,9 @@ class GameSetup extends Component {
 
     this.state = {
       input1: null,
-      input2: null
+      input2: null,
+      isFocused1: false,
+      isFocused2: false
     }
   }
 
@@ -24,20 +26,32 @@ class GameSetup extends Component {
       <View style={styles.container}>
         <View style={styles.input}>
           <TextInput
+            style={[styles.textInput, { marginBottom: 15, opacity: this.state.isFocused1 ? 1 : 0.5 }]}
             placeholder='Player 1'
+            placeholderTextColor='#FFFFFF'
+            maxLength={10}
             onChangeText={(text) => this.setState({ input1: text })}
-            underlineColorAndroid='black'/>
+            onFocus={() => this.setState({ isFocused1: true })}
+            onBlur={() => this.setState({ isFocused1: false })}
+            autoCorrect={false}
+            underlineColorAndroid='#0091EA'/>
           <TextInput
+            style={[styles.textInput, { marginTop: 15, opacity: this.state.isFocused2 ? 1 : 0.5 }]}
             placeholder='Player 2'
+            placeholderTextColor='#FFFFFF'
+            maxLength={10}
             onChangeText={(text) => this.setState({ input2: text })}
-            underlineColorAndroid='black'/>
+            onFocus={() => this.setState({ isFocused2: true })}
+            onBlur={() => this.setState({ isFocused2: false })}
+            autoCorrect={false}
+            underlineColorAndroid='#0091EA'/>
         </View>
         <TouchableHighlight
           style={styles.readyBtn}
           onPress={() => this.handleOnPress()}
-          underlayColor='#90CAF9'
+          underlayColor='#40C4FF'
           activeOpacity={0.9}>
-          <Text style={styles.readyBtnText}>Ready</Text>
+          <Text style={styles.readyBtnText}>READY</Text>
         </TouchableHighlight>
       </View>
     );
@@ -47,17 +61,16 @@ class GameSetup extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: 'red',
     flexDirection: 'column',
   },
-  text: {
-    flex: 1,
-    color: 'white',
-  },
+  // text: {
+  //   flex: 1,
+  //   color: 'white',
+  // },
   input: {
     flex: 11,
     alignSelf: 'stretch',
-    backgroundColor: 'white',
+    backgroundColor: '#424242',
     paddingLeft: 40,
     paddingRight: 40,
     paddingTop: 10,
@@ -67,19 +80,21 @@ const styles = StyleSheet.create({
   },
   readyBtn: {
     flex: 1,
-    backgroundColor: '#2196F3',
+    backgroundColor: '#0091EA',
     alignItems: 'center',
     justifyContent: 'center',
   },
   readyBtnText: {
     color: 'white',
-    fontWeight: 'bold',
+    fontWeight: '600', // Medium
     fontSize: 20,
+    elevation: 2,
+  },
+  textInput: {
+    color: '#FFFFFF',
+    fontSize: 30,
+    textDecorationLine: 'none'
   }
-  // player2: {
-  //   flex: 1,
-  //   backgroundColor: 'blue',
-  // }
 });
 
 export default connect(null, { setNames })(GameSetup);
