@@ -8,7 +8,7 @@ import reducers from './reducers';
 import GameSetup from './containers/gameSetup';
 import MainScreen from './components/mainScreen';
 import P1Trade from './containers/player1/p1Trade';
-import WinScreen from './components/winScreen';
+import WinScreen from './containers/winScreen';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 

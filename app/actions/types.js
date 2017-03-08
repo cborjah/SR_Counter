@@ -11,3 +11,5 @@ export const ADD_TRADE_P2 = "ADD_TRADE_P2";
 export const MINUS_COMBAT_P2 = "MINUS_COMBAT_P2";
 export const ADD_COMBAT_P2 = "ADD_COMBAT_P2";
 export const P2_ATTACKS = "P2_ATTACKS";
+
+export const NEW_GAME = "NEW_GAME";

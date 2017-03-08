@@ -1,26 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { View, Text, StyleSheet, TouchableHighlight, Dimensions } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import { newGame } from '../actions/newGame';
 
 const window = Dimensions.get('window');
 
-const WinScreen = (props) => {
-  return (
-    <View style={styles.container}>
-      <View style={styles.winMessage}>
-        <Text style={styles.text}>{props.winner} Wins!</Text>
+class WinScreen extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  handleNewGame() {
+    this.props.newGame();
+    Actions.gameSetup({ type: 'replace' });
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <View style={styles.winMessage}>
+          <Text style={styles.text}>{this.props.winner} Wins!</Text>
+        </View>
+        <View style={styles.newGame}>
+          <TouchableHighlight
+            style={styles.button}
+            onPress={() => this.handleNewGame()}
+            underlayColor='#40C4FF'
+            activeOpacity={0.9}>
+            <Text style={styles.buttonText}>NEW GAME</Text>
+          </TouchableHighlight>
+        </View>
       </View>
-      <View style={styles.newGame}>
-        <TouchableHighlight
-          style={styles.button}
-          onPress={() => Actions.gameSetup({ type: 'replace' })}
-          underlayColor='#40C4FF'
-          activeOpacity={0.9}>
-          <Text style={styles.buttonText}>NEW GAME</Text>
-        </TouchableHighlight>
-      </View>
-    </View>
-  );
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -66,4 +79,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default WinScreen;
+export default connect(null, { newGame })(WinScreen);
