@@ -7,12 +7,9 @@ class P1Combat extends Component {
   render() {
     return (
       <View style={styles.container}>
-
-
         <View style={styles.combat}>
           <Text style={styles.text}>{this.props.combat}</Text>
         </View>
-
         <View style={styles.buttonContainer}>
           <TouchableHighlight style={styles.button} underlayColor={'transparent'} onPress={() => this.props.minusCombatP1()}>
             <Text style={styles.minus}>-</Text>
@@ -21,7 +18,6 @@ class P1Combat extends Component {
             <Text style={styles.plus}>+</Text>
           </TouchableHighlight>
         </View>
-
       </View>
     );
   }

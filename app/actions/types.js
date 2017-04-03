@@ -16,6 +16,8 @@ export const MINUS_COMBAT_P2 = "MINUS_COMBAT_P2";
 export const ADD_COMBAT_P2 = "ADD_COMBAT_P2";
 export const ADD_AUTHORITY_P2 = "ADD_AUTHORITY_P2";
 export const MINUS_AUTHORITY_P2 = "MINUS_AUTHORITY_P2";
+export const ADD_DEFENSE_P2 = "ADD_DEFENSE_P2";
+export const MINUS_DEFENSE_P2 = "MINUS_DEFENSE_P2";
 export const P2_ATTACKS = "P2_ATTACKS";
 
 export const NEW_GAME = "NEW_GAME";

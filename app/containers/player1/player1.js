@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
-import { IndicatorViewPager } from 'rn-viewpager';
+// import { IndicatorViewPager } from 'rn-viewpager';
 
 import P1Authority from './p1Authority';
 import P1Trade from './p1Trade';
@@ -31,17 +31,11 @@ class Player1 extends Component {
           <View style={styles.statsTop}>
             <P1Authority />
             <P1Bases />
-            {/* <View style={styles.fabContainer}>
-
-            </View> */}
           </View>
 
           <View style={styles.statsBottom}>
             <P1Trade />
             <P1Combat />
-            {/* <View style={styles.fabContainer}>
-
-            </View> */}
           </View>
 
           <View style={styles.fabContainer}>

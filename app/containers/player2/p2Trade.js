@@ -7,15 +7,20 @@ class P2Trade extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <TouchableHighlight style={styles.button} underlayColor={'transparent'} onPress={() => this.props.minusTradeP2()}>
-          <Text style={styles.minus}>-</Text>
-        </TouchableHighlight>
+
         <View style={styles.trade}>
           <Text style={styles.text}>{this.props.trade}</Text>
         </View>
-        <TouchableHighlight style={styles.button} underlayColor={'transparent'} onPress={() => this.props.addTradeP2()}>
-          <Text style={styles.plus}>+</Text>
-        </TouchableHighlight>
+
+        <View style={styles.buttonContainer}>
+          <TouchableHighlight style={styles.button} underlayColor={'transparent'} onPress={() => this.props.minusTradeP2()}>
+            <Text style={styles.minus}>-</Text>
+          </TouchableHighlight>
+          <TouchableHighlight style={styles.button} underlayColor={'transparent'} onPress={() => this.props.addTradeP2()}>
+            <Text style={styles.plus}>+</Text>
+          </TouchableHighlight>
+        </View>
+
       </View>
     );
   }
@@ -24,33 +29,36 @@ class P2Trade extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
-    backgroundColor: '#FFEB3B',
+    // backgroundColor: '#FFEB3B'
+  },
+  trade: {
+    flex: 2,
     alignItems: 'center',
-    justifyContent: 'space-around',
-    paddingRight: 30,
-    paddingLeft: 30,
+    justifyContent: 'center',
+    backgroundColor: '#FFEB3B'
+  },
+  buttonContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#757575'
+  },
+  text: {
+    fontSize: 50
   },
   button: {
     flex: 1,
     alignItems: 'center',
   },
-  trade: {
-    flex: 2,
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 50,
-  },
   minus: {
     fontSize: 50,
     position: 'relative',
-    bottom: 3,
+    bottom: 3
   },
   plus: {
     fontSize: 50,
     position: 'relative',
-    bottom: 2,
+    bottom: 2
   }
 });
 
