@@ -1,4 +1,12 @@
-import { MINUS_TRADE_P1, ADD_TRADE_P1, MINUS_COMBAT_P1, ADD_COMBAT_P1, P1_ATTACKS } from './types';
+import {
+  MINUS_TRADE_P1,
+  ADD_TRADE_P1,
+  MINUS_COMBAT_P1,
+  ADD_COMBAT_P1,
+  P1_ATTACKS,
+  ADD_AUTHORITY_P1,
+  MINUS_AUTHORITY_P1
+} from './types';
 
 export function minusTradeP1() {
   return {
@@ -21,6 +29,18 @@ export function minusCombatP1() {
 export function addCombatP1() {
   return {
     type: ADD_COMBAT_P1
+  };
+}
+
+export function addAuthorityP1() {
+  return {
+    type: ADD_AUTHORITY_P1
+  };
+}
+
+export function minusAuthorityP1() {
+  return {
+    type: MINUS_AUTHORITY_P1
   };
 }
 

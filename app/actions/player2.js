@@ -1,4 +1,10 @@
-import { MINUS_TRADE_P2, ADD_TRADE_P2, MINUS_COMBAT_P2, ADD_COMBAT_P2, P2_ATTACKS } from './types';
+import {
+  MINUS_TRADE_P2,
+  ADD_TRADE_P2,
+  MINUS_COMBAT_P2,
+  ADD_COMBAT_P2,
+  P2_ATTACKS
+} from './types';
 
 export function minusTradeP2() {
   return {

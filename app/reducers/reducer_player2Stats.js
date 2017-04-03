@@ -1,4 +1,14 @@
-import { MINUS_TRADE_P2, ADD_TRADE_P2, MINUS_COMBAT_P2, ADD_COMBAT_P2, P1_ATTACKS, P2_ATTACKS, NEW_GAME } from '../actions/types';
+import {
+  MINUS_TRADE_P2,
+  ADD_TRADE_P2,
+  MINUS_COMBAT_P2,
+  ADD_COMBAT_P2,
+  MINUS_AUTHORITY_P2,
+  ADD_AUTHORITY_P2,
+  P1_ATTACKS,
+  P2_ATTACKS,
+  NEW_GAME
+} from '../actions/types';
 
 const INITIAL_STATE = {
   authority: 50,

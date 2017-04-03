@@ -32,13 +32,15 @@ class AttackButton extends Component {
 
   render() {
     return (
-      <TouchableHighlight
-        style={styles.container}
-        onPress={() => this.handleAttack()}
-        underlayColor='#F44336'
-        activeOpacity={0.9}>
-        <Text style={styles.text}>ATTACK</Text>
-      </TouchableHighlight>
+      <View style={styles.container}>
+        <TouchableHighlight
+          style={styles.button}
+          onPress={() => this.handleAttack()}
+          underlayColor='#F44336'
+          activeOpacity={0.9}>
+          <Text style={styles.text}>ATTACK</Text>
+        </TouchableHighlight>
+      </View>
     );
   }
 }
@@ -46,13 +48,21 @@ class AttackButton extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#d52122',
+    // backgroundColor: '#d52122',
     // backgroundColor: '#F44336',
+    backgroundColor: '#757575',
     justifyContent: 'center',
     alignItems: 'center',
   },
   text: {
-    fontSize: 50
+    fontSize: 30,
+    color: 'white'
+  },
+  button: {
+    backgroundColor: '#d52122',
+    width: 150,
+    alignItems: 'center',
+    borderRadius: 5
   }
 });
 
