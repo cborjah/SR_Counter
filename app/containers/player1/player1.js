@@ -45,7 +45,14 @@ class Player1 extends Component {
           </View>
 
           <View style={styles.fabContainer}>
-            <AttackButton />
+            <AttackButton
+              combatPoints={this.props.combat}
+              p1={true}
+              p2={false}
+              setPage={() => {
+                this.props.changeTab();
+                // this.viewPager.setPage(1);
+            }}/>
           </View>
 
         </View>

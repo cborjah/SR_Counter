@@ -6,6 +6,8 @@ export const MINUS_COMBAT_P1 = "MINUS_COMBAT_P1";
 export const ADD_COMBAT_P1 = "ADD_COMBAT_P1";
 export const ADD_AUTHORITY_P1 = "ADD_AUTHORITY_P1";
 export const MINUS_AUTHORITY_P1 = "MINUS_AUTHORITY_P1";
+export const ADD_DEFENSE_P1 = "ADD_DEFENSE_P1";
+export const MINUS_DEFENSE_P1 = "MINUS_DEFENSE_P1";
 export const P1_ATTACKS = "P1_ATTACKS";
 
 export const MINUS_TRADE_P2 = "MINUS_TRADE_P2";

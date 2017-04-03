@@ -5,6 +5,8 @@ import {
   ADD_COMBAT_P1,
   MINUS_AUTHORITY_P1,
   ADD_AUTHORITY_P1,
+  MINUS_DEFENSE_P1,
+  ADD_DEFENSE_P1,
   P2_ATTACKS,
   P1_ATTACKS,
   NEW_GAME
@@ -13,7 +15,8 @@ import {
 const INITIAL_STATE = {
   authority: 50,
   trade: 0,
-  combat: 0
+  combat: 0,
+  defense: 0
 }
 
 export default function(state = INITIAL_STATE, action) {
@@ -40,8 +43,25 @@ export default function(state = INITIAL_STATE, action) {
     case ADD_AUTHORITY_P1: {
       return { ...state, authority: state.authority + 1 };
     }
+    case MINUS_DEFENSE_P1: {
+      if(state.defense > 0) {
+        return { ...state, defense: state.defense - 1 };
+      } else {
+        return state;
+      }
+    }
+    case ADD_DEFENSE_P1: {
+      return { ...state, defense: state.defense + 1 };
+    }
     case P2_ATTACKS:
-      return { ...state, authority: state.authority - action.payload };
+      // return { ...state, authority: state.authority - action.payload };
+      if(action.payload >= state.defense) {
+        action.payload -= state.defense;
+        state.defense = 0;
+        return { ...state, authority: state.authority - action.payload };
+      } else {
+        return state;
+      }
     case P1_ATTACKS:
       return { ...state, trade: 0, combat: 0 };
     case NEW_GAME:

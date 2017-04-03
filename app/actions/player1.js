@@ -5,7 +5,9 @@ import {
   ADD_COMBAT_P1,
   P1_ATTACKS,
   ADD_AUTHORITY_P1,
-  MINUS_AUTHORITY_P1
+  MINUS_AUTHORITY_P1,
+  ADD_DEFENSE_P1,
+  MINUS_DEFENSE_P1
 } from './types';
 
 export function minusTradeP1() {
@@ -41,6 +43,18 @@ export function addAuthorityP1() {
 export function minusAuthorityP1() {
   return {
     type: MINUS_AUTHORITY_P1
+  };
+}
+
+export function addDefenseP1() {
+  return {
+    type: ADD_DEFENSE_P1
+  };
+}
+
+export function minusDefenseP1() {
+  return {
+    type: MINUS_DEFENSE_P1
   };
 }
 
