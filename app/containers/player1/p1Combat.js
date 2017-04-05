@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight, Dimensions } from 'react-native';
 import { minusCombatP1, addCombatP1 } from '../../actions/player1';
 import Svg, { Path, Rect, G } from 'react-native-svg';
+
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
 
 class P1Combat extends Component {
   render() {
@@ -56,7 +59,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-around'
+    justifyContent: 'center'
     // backgroundColor: '#757575'
   },
   text: {
@@ -67,11 +70,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     // justifyContent: 'center',
     backgroundColor: '#424242',
-    width: 40,
-    height: 40,
+    // width: 60,
+    // height: 40,
+    width: width / 6,
+    height: height / 16,
     borderRadius: 2,
-    elevation: 5
-    // marginRight: 10
+    elevation: 5,
+    marginRight: 1,
+    marginLeft: 1
   },
   minus: {
     fontSize: 50,
@@ -80,9 +86,9 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   plus: {
-    fontSize: 50,
+    fontSize: 40,
     position: 'relative',
-    bottom: 16,
+    bottom: 9,
     color: 'white',
   },
   textContainer: {

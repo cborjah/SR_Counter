@@ -11,9 +11,11 @@ class MainScreen extends Component {
     return (
       <View style={styles.container}>
         <ScrollableTabView
-          renderTabBar={() => <DefaultTabBar tabStyle={{ paddingBottom: 0, backgroundColor: '#424242', height: 50 }} underlineStyle={{ width: 0 }} activeTextColor='#01579B' inactiveTextColor='white'/>}
-          tabBarPosition='bottom'
+          renderTabBar={() => <DefaultTabBar tabStyle={{ paddingBottom: 0, backgroundColor: '#212121', height: 50 }} activeTextColor='white' inactiveTextColor='#444'/>}
+          tabBarPosition='top'
           style={{ backgroundColor: '#212121' }}
+          tabBarUnderlineStyle={{ backgroundColor: 'white' }}
+          // activeTabStyle={{ backgroundColor: '#1E1E1E' }}
           // locked={true}
           ref={tabView => { this.tabView = tabView; }}>
           <Player1 changeTab={() => this.tabView.goToPage(1)} tabLabel={this.props.name1}/>

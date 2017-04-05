@@ -64,7 +64,8 @@ const styles = StyleSheet.create({
     width: 150,
     alignItems: 'center',
     borderRadius: 5,
-    elevation: 10
+    elevation: 10,
+    marginBottom: 13
   }
 });
 

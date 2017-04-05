@@ -22,9 +22,9 @@ class Player1 extends Component {
     return (
       <View style={styles.player1}>
 
-        <View style={styles.playerName}>
+        {/* <View style={styles.playerName}>
           <Text style={styles.playerNameText}>{this.props.name1}</Text>
-        </View>
+        </View> */}
 
         <View style={styles.playerStats}>
 
@@ -49,6 +49,10 @@ class Player1 extends Component {
             }}/>
           </View>
 
+        </View>
+
+        <View style={styles.playerName}>
+          <Text style={styles.playerNameText}>{this.props.name1}</Text>
         </View>
 
       </View>
