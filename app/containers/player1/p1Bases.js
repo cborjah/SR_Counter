@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight, Dimensions } from 'react-native';
 import Svg, { Path, G } from 'react-native-svg';
 
 import { addDefenseP1, minusDefenseP1 } from '../../actions/player1';
+
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
 
 class P1Bases extends Component {
   render() {
@@ -71,17 +74,21 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-around'
+    justifyContent: 'center'
     // backgroundColor: 'pink'
   },
   button: {
     // flex: 1,
     alignItems: 'center',
     backgroundColor: '#424242',
-    width: 40,
-    height: 40,
+    // width: 40,
+    // height: 40,
+    width: width / 6,
+    height: height / 16,
     borderRadius: 2,
-    elevation: 5
+    elevation: 5,
+    marginLeft: 1,
+    marginRight: 1
   },
   minus: {
     fontSize: 50,
@@ -90,9 +97,9 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   plus: {
-    fontSize: 50,
+    fontSize: 40,
     position: 'relative',
-    bottom: 16,
+    bottom: 9,
     color: 'white'
   },
   outpostValue: {

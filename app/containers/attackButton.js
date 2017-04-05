@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight, Dimensions } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { p1Attacks } from '../actions/player1';
 import { p2Attacks } from '../actions/player2';
+
+const width = Dimensions.get('window').width;
 
 class AttackButton extends Component {
   constructor(props) {
@@ -61,7 +63,8 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: '#d52122',
-    width: 150,
+    // width: 150,
+    width: width / 1.19,
     alignItems: 'center',
     borderRadius: 5,
     elevation: 10,
