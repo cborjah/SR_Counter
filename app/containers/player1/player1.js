@@ -116,13 +116,13 @@ const styles = StyleSheet.create({
     // backgroundColor: '#76FF03'
   },
   statsTop: {
-    flex: 3,
-    flexDirection: 'row'
+    flex: 1,
+    flexDirection: 'row',
     // backgroundColor: '#29B6F6'
   },
   statsBottom: {
-    flex: 2,
-    flexDirection: 'row'
+    flex: 1,
+    flexDirection: 'row',
     // backgroundColor: '#4DB6AC',
   },
   statsText: {
@@ -140,8 +140,8 @@ const styles = StyleSheet.create({
   //   flexDirection: 'row'
   // },
   fabContainer: {
-    height: 50,
-    backgroundColor: 'blue'
+    height: 80,
+    // backgroundColor: 'blue'
   }
 });
 

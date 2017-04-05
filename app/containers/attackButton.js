@@ -37,7 +37,8 @@ class AttackButton extends Component {
           style={styles.button}
           onPress={() => this.handleAttack()}
           underlayColor='#F44336'
-          activeOpacity={0.9}>
+          activeOpacity={0.9}
+        >
           <Text style={styles.text}>ATTACK</Text>
         </TouchableHighlight>
       </View>
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
     flex: 1,
     // backgroundColor: '#d52122',
     // backgroundColor: '#F44336',
-    backgroundColor: '#757575',
+    // backgroundColor: '#757575',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -62,7 +63,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#d52122',
     width: 150,
     alignItems: 'center',
-    borderRadius: 5
+    borderRadius: 5,
+    elevation: 10
   }
 });
 
