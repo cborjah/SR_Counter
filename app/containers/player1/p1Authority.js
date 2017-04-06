@@ -5,8 +5,7 @@ import Svg, { Polygon, G } from 'react-native-svg';
 
 import { addAuthorityP1, minusAuthorityP1 } from '../../actions/player1';
 
-const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
+const { width, height } = Dimensions.get('window');
 
 class P1Authority extends Component {
   render() {
@@ -14,18 +13,20 @@ class P1Authority extends Component {
       <View style={styles.container}>
 
         <View style={styles.authority}>
-
-          <Svg
-            height="192"
-            width="192"
-          >
-            <G id="Authority" stroke="#69F0AE" stroke-width="4" fill="#69F0AE" scale="0.8" rotate="180" x="174" y="190">
-              <Polygon id="Path-2" points="29 67.0120361 96.4487033 4 164 68.9696784 164 189 29.0907393 189" />
-            </G>
-          </Svg>
+          <View style={styles.iconContainer}>
+            <Svg
+              height="192"
+              width="192"
+            >
+              <G id="Authority" stroke="#69F0AE" stroke-width="4" fill="#69F0AE" scale="0.8" rotate="180" x="179" y="169">
+                <Polygon id="Path-2" points="29 67.0120361 96.4487033 4 164 68.9696784 164 189 29.0907393 189" />
+              </G>
+            </Svg>
+          </View>
 
           <View style={styles.textContainer}>
             <Text style={styles.text}>{this.props.authority}</Text>
+            <Text style={styles.label}>AUTHORITY</Text>
           </View>
 
         </View>
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
     // backgroundColor: 'green'
   },
   authority: {
-    flex: 3,
+    flex: 4,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#212121'
@@ -59,8 +60,8 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center'
-    // backgroundColor: 'pink'
+    justifyContent: 'center',
+    // backgroundColor: 'white'
   },
   text: {
     fontSize: 50
@@ -97,6 +98,17 @@ const styles = StyleSheet.create({
     bottom: 0,
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  iconContainer: {
+    flex: 5,
+    // backgroundColor: 'orange',
+    alignItems: 'center'
+  },
+  label: {
+    color: 'grey',
+    position: 'relative',
+    top: 38,
+    fontSize: 20
   }
 });
 

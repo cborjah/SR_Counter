@@ -22,10 +22,6 @@ class Player2 extends Component {
     return (
       <View style={styles.player2}>
 
-        <View style={styles.playerName}>
-          <Text style={styles.playerNameText}>{this.props.name2}</Text>
-        </View>
-
         <View style={styles.playerStats}>
 
           <View style={styles.statsTop}>
@@ -50,6 +46,10 @@ class Player2 extends Component {
 
         </View>
 
+        <View style={styles.playerName}>
+          <Text style={styles.playerNameText}>{this.props.name2}</Text>
+        </View>
+
       </View>
     );
   }
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   playerNameText: {
-    fontSize:20,
+    fontSize: 20,
     fontWeight: 'bold',
     color: 'white',
   },
@@ -78,12 +78,12 @@ const styles = StyleSheet.create({
     // backgroundColor: '#76FF03'
   },
   statsTop: {
-    flex: 3,
+    flex: 1,
     flexDirection: 'row'
     // backgroundColor: '#29B6F6'
   },
   statsBottom: {
-    flex: 2,
+    flex: 1,
     flexDirection: 'row'
     // backgroundColor: '#4DB6AC',
   },
@@ -98,8 +98,8 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
   },
   fabContainer: {
-    height: 50,
-    backgroundColor: 'blue'
+    height: 80,
+    // backgroundColor: 'blue'
   }
 });
 

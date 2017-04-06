@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    fontSize: 30,
+    fontSize: 22,
     color: 'white'
   },
   button: {
@@ -68,7 +68,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 5,
     elevation: 10,
-    marginBottom: 13
+    // marginBottom: 13,
+    paddingTop: 9,
+    paddingBottom: 9
   }
 });
 

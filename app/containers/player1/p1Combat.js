@@ -4,8 +4,7 @@ import { View, Text, StyleSheet, TouchableHighlight, Dimensions } from 'react-na
 import { minusCombatP1, addCombatP1 } from '../../actions/player1';
 import Svg, { Path, Rect, G } from 'react-native-svg';
 
-const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
+const {width, height} = Dimensions.get('window');
 
 class P1Combat extends Component {
   render() {
@@ -13,22 +12,27 @@ class P1Combat extends Component {
       <View style={styles.container}>
 
         <View style={styles.combat}>
-          <Svg
-            height="192"
-            width="192"
-          >
-            <G id="Group" x="33.5" y="33.5" scale="0.7">
-              <Path d="M90,165 C131.421356,165 165,131.421356 165,90 C165,48.5786438 131.421356,15 90,15 C48.5786438,15 15,48.5786438 15,90 C15,131.421356 48.5786438,165 90,165 Z" id="Oval" stroke="#EF5350" stroke-width="4" fill="#EF5350" />
-              <Rect id="Rectangle-2" fill="#EF5350" x="88" y="0" width="4" height="15" rx="2" />
-              <Rect id="Rectangle" fill="#EF5350" x="0" y="88" width="15" height="4" rx="2" />
-              <Rect id="Rectangle" fill="#EF5350" x="165" y="88" width="15" height="4" rx="2" />
-              <Rect id="Rectangle-2-Copy" fill="#EF5350" x="88" y="165" width="4" height="15" rx="2" />
-            </G>
-          </Svg>
+          <View style={styles.iconContainer}>
+            <Svg
+              height="192"
+              width="192"
+            >
+              <G id="Group" x="39.5" y="15.5" scale="0.7">
+              {/* <G id="Group" scale="0.7"> */}
+                <Path d="M90,165 C131.421356,165 165,131.421356 165,90 C165,48.5786438 131.421356,15 90,15 C48.5786438,15 15,48.5786438 15,90 C15,131.421356 48.5786438,165 90,165 Z" id="Oval" stroke="#EF5350" stroke-width="4" fill="#EF5350" />
+                <Rect id="Rectangle-2" fill="#EF5350" x="88" y="0" width="4" height="15" rx="2" />
+                <Rect id="Rectangle" fill="#EF5350" x="0" y="88" width="15" height="4" rx="2" />
+                <Rect id="Rectangle" fill="#EF5350" x="165" y="88" width="15" height="4" rx="2" />
+                <Rect id="Rectangle-2-Copy" fill="#EF5350" x="88" y="165" width="4" height="15" rx="2" />
+              </G>
+            </Svg>
+          </View>
 
           <View style={styles.textContainer}>
             <Text style={styles.text}>{this.props.combat}</Text>
+            <Text style={styles.label}>COMBAT</Text>
           </View>
+
         </View>
 
         <View style={styles.buttonContainer}>
@@ -50,16 +54,17 @@ const styles = StyleSheet.create({
     flex: 1
   },
   combat: {
-    flex: 2,
+    flex: 4,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#212121'
+    // backgroundColor: '#212121'
   },
   buttonContainer: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    // backgroundColor: 'white'
     // backgroundColor: '#757575'
   },
   text: {
@@ -98,7 +103,19 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     justifyContent: 'center',
+    alignItems: 'center',
+    // backgroundColor: 'grey'
+  },
+  iconContainer: {
+    flex: 5,
+    // backgroundColor: 'orange',
     alignItems: 'center'
+  },
+  label: {
+    color: 'grey',
+    position: 'relative',
+    top: 38,
+    fontSize: 20
   }
 });
 

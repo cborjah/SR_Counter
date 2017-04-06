@@ -4,9 +4,7 @@ import { View, Text, StyleSheet, Button, TouchableHighlight, Dimensions } from '
 import { minusTradeP1, addTradeP1 } from '../../actions/player1';
 import Svg, { Path } from 'react-native-svg';
 
-const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
-
+const { width, height } = Dimensions.get('window');
 
 class P1Trade extends Component {
   render() {
@@ -14,23 +12,25 @@ class P1Trade extends Component {
       <View style={styles.container}>
 
         <View style={styles.trade}>
-
-          <Svg
-            height="192"
-            width="192"
-          >
-            <Path
-              d="M96,171 C137.421356,171 171,137.421356 171,96 C171,54.5786438 137.421356,21 96,21 C54.5786438,21 21,54.5786438 21,96 C21,137.421356 54.5786438,171 96,171 Z"
-              id="Oval"
-              scale={0.7}
-              fill="#FFEE58"
-              x={29}
-              y={29}
-            />
-          </Svg>
+          <View style={styles.iconContainer}>
+            <Svg
+              height="192"
+              width="192"
+            >
+              <Path
+                d="M96,171 C137.421356,171 171,137.421356 171,96 C171,54.5786438 137.421356,21 96,21 C54.5786438,21 21,54.5786438 21,96 C21,137.421356 54.5786438,171 96,171 Z"
+                id="Oval"
+                scale={0.7}
+                fill="#FFEE58"
+                x="35"
+                y="11"
+              />
+            </Svg>
+          </View>
 
           <View style={styles.textContainer}>
             <Text style={styles.text}>{this.props.trade}</Text>
+            <Text style={styles.label}>TRADE</Text>
           </View>
 
         </View>
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     // backgroundColor: '#FFEB3B'
   },
   trade: {
-    flex: 2,
+    flex: 4,
     alignItems: 'center',
     justifyContent: 'center',
     // backgroundColor: '#FFEB3B'
@@ -65,7 +65,8 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    // backgroundColor: 'white'
     // backgroundColor: '#757575'
   },
   textContainer: {
@@ -103,6 +104,17 @@ const styles = StyleSheet.create({
     position: 'relative',
     bottom: 9,
     color: 'white'
+  },
+  iconContainer: {
+    flex: 5,
+    // backgroundColor: 'orange',
+    alignItems: 'center'
+  },
+  label: {
+    color: 'grey',
+    position: 'relative',
+    top: 38,
+    fontSize: 20
   }
 });
 
