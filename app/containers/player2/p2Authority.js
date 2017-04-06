@@ -26,7 +26,7 @@ class P2Authority extends Component {
 
           <View style={styles.textContainer}>
             <Text style={styles.text}>{this.props.authority}</Text>
-            <Text style={styles.label}>AUTHORITY</Text>
+            <Text style={styles.label}>Authority</Text>
           </View>
 
         </View>

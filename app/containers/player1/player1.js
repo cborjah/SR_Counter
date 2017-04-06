@@ -8,6 +8,7 @@ import P1Trade from './p1Trade';
 import P1Combat from './p1Combat';
 import AttackButton from '../attackButton';
 import P1Bases from './p1Bases';
+import P1History from './p1History';
 
 class Player1 extends Component {
   constructor(props) {
@@ -52,7 +53,8 @@ class Player1 extends Component {
         </View>
 
         <View style={styles.playerName}>
-          <Text style={styles.playerNameText}>{this.props.name1}</Text>
+          {/* <Text style={styles.playerNameText}>{this.props.name1}</Text> */}
+          
         </View>
 
       </View>

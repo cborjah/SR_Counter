@@ -26,7 +26,7 @@ class P2Bases extends Component {
 
           <View style={styles.textContainer}>
             <Text style={styles.text}>{this.props.defense}</Text>
-            <Text style={styles.label}>DEFENSE</Text>
+            <Text style={styles.label}>Defense</Text>
           </View>
 
         </View>

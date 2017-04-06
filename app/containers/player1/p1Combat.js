@@ -30,7 +30,7 @@ class P1Combat extends Component {
 
           <View style={styles.textContainer}>
             <Text style={styles.text}>{this.props.combat}</Text>
-            <Text style={styles.label}>COMBAT</Text>
+            <Text style={styles.label}>Combat</Text>
           </View>
 
         </View>

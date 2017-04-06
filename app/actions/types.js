@@ -21,3 +21,5 @@ export const MINUS_DEFENSE_P2 = "MINUS_DEFENSE_P2";
 export const P2_ATTACKS = "P2_ATTACKS";
 
 export const NEW_GAME = "NEW_GAME";
+
+export const TAB_CHANGED = "TAB_CHANGED";

@@ -30,7 +30,7 @@ class P1Trade extends Component {
 
           <View style={styles.textContainer}>
             <Text style={styles.text}>{this.props.trade}</Text>
-            <Text style={styles.label}>TRADE</Text>
+            <Text style={styles.label}>Trade</Text>
           </View>
 
         </View>
