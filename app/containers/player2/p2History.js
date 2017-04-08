@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
-class P1History extends Component {
-
+class P2History extends Component {
+  
   renderHistory() {
-    // const hist = [{ val: "+1", color: "#FFEE58" }, { val: "-1", color: "#EF5350" },{ val: "+5", color: "grey" }, { val: "-5", color: "#FFEE58" }];
     return this.props.history.map((item) => {
       return (
         <View style={{ flex: 1, backgroundColor: item.color, alignItems: 'center', justifyContent: 'center', alignSelf: 'stretch', paddingLeft: 5, paddingRight: 5 }}>
@@ -36,8 +35,8 @@ class P1History extends Component {
 
 function mapStateToProps(state) {
   return {
-    history: state.player1Stats.history
+    history: state.player2Stats.history
   }
 }
 
-export default connect(mapStateToProps, null)(P1History);
+export default connect(mapStateToProps, null)(P2History);

@@ -8,14 +8,11 @@ import P2Trade from './p2Trade';
 import P2Combat from './p2Combat';
 import AttackButton from '../attackButton';
 import P2Bases from './p2Bases';
+import P2History from './p2History';
 
 class Player2 extends Component {
   constructor(props) {
     super(props);
-  }
-
-  handleAuthority() {
-    // Navigate to edit authority scene
   }
 
   render() {
@@ -46,8 +43,8 @@ class Player2 extends Component {
 
         </View>
 
-        <View style={styles.playerName}>
-          <Text style={styles.playerNameText}>{this.props.name2}</Text>
+        <View style={styles.history}>
+          <P2History />
         </View>
 
       </View>
@@ -60,11 +57,11 @@ const styles = StyleSheet.create({
     flex: 1,
     // backgroundColor: '#E0E0E0',
   },
-  playerName: {
+  history: {
     flex: 1,
     backgroundColor: '#424242',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // alignItems: 'center',
+    // justifyContent: 'center',
     elevation: 5,
   },
   playerNameText: {

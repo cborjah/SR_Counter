@@ -21,8 +21,8 @@ const INITIAL_STATE = {
 }
 
 export default function(state = INITIAL_STATE, action) {
-  let updatedHistory = state.history.slice();
-  let lastItem = updatedHistory[updatedHistory.length - 1];
+  const updatedHistory = state.history.slice();
+  const lastItem = updatedHistory[updatedHistory.length - 1];
 
   switch(action.type) {
     case MINUS_TRADE_P1:

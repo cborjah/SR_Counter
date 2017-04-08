@@ -15,17 +15,9 @@ class Player1 extends Component {
     super(props);
   }
 
-  handleAuthority() {
-    // Navigate to edit authority scene
-  }
-
   render() {
     return (
       <View style={styles.player1}>
-
-        {/* <View style={styles.playerName}>
-          <Text style={styles.playerNameText}>{this.props.name1}</Text>
-        </View> */}
 
         <View style={styles.playerStats}>
 
@@ -46,54 +38,17 @@ class Player1 extends Component {
               p2={false}
               setPage={() => {
                 this.props.changeTab();
-                // this.viewPager.setPage(1);
             }}/>
           </View>
 
         </View>
 
         <View style={styles.history}>
-          {/* <Text style={styles.playerNameText}>{this.props.name1}</Text> */}
           <P1History />
         </View>
 
       </View>
 
-      // <View style={styles.player1}>
-      //   <View style={styles.playerName}>
-      //     <Text style={styles.playerNameText}>{this.props.name1}</Text>
-      //   </View>
-      //   <View style={styles.playerStats}>
-      //     <View style={styles.statsTop}>
-      //       <TouchableHighlight
-      //         style={styles.authority}
-      //         onPress={() => this.handleAuthority()}
-      //         underlayColor='#69F0AE'
-      //         activeOpacity={0.9}>
-      //         <Text style={styles.statsText}>{this.props.authority}</Text>
-      //       </TouchableHighlight>
-      //     </View>
-      //     <View style={styles.statsBottom}>
-      //       <P1Trade />
-      //       <IndicatorViewPager ref={viewPager => this.viewPager = viewPager} style={{ flex: 1 }}>
-      //       {/* NOTE: ref={viewPager => this.viewPager = viewPager} allows you to use this.viewPager.setPage(). This also works for ViewPagerAndroid.*/}
-      //         <View style={{ flex: 1 }}>
-      //           <P1Combat />
-      //         </View>
-      //         <View>
-      //           <AttackButton
-      //             combatPoints={this.props.combat}
-      //             p1={true}
-      //             p2={false}
-      //             setPage={() => {
-      //               this.props.changeTab();
-      //               this.viewPager.setPage(0);
-      //             }}/>
-      //         </View>
-      //       </IndicatorViewPager>
-      //     </View>
-      //   </View>
-      // </View>
     );
   }
 }
