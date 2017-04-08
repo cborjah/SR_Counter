@@ -52,9 +52,9 @@ class Player1 extends Component {
 
         </View>
 
-        <View style={styles.playerName}>
+        <View style={styles.history}>
           {/* <Text style={styles.playerNameText}>{this.props.name1}</Text> */}
-          
+          <P1History />
         </View>
 
       </View>
@@ -104,18 +104,18 @@ const styles = StyleSheet.create({
     // flexDirection: 'column',
     // backgroundColor: '#E0E0E0',
   },
-  playerName: {
+  history: {
     flex: 1,
     backgroundColor: '#424242',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // alignItems: 'center',
+    // justifyContent: 'center',
     elevation: 5,
   },
-  playerNameText: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: 'white',
-  },
+  // playerNameText: {
+  //   fontSize: 20,
+  //   fontWeight: 'bold',
+  //   color: 'white',
+  // },
   playerStats: {
     flex: 15,
     // flexDirection: 'row',

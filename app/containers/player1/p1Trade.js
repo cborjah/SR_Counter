@@ -3,11 +3,21 @@ import { connect } from 'react-redux';
 import { View, Text, StyleSheet, Button, TouchableHighlight, Dimensions } from 'react-native';
 import { minusTradeP1, addTradeP1 } from '../../actions/player1';
 import Svg, { Path } from 'react-native-svg';
+import _ from 'lodash';
 
 const { width, height } = Dimensions.get('window');
 
 class P1Trade extends Component {
   render() {
+
+    // const updateStore = _.debounce(() => {
+    //   console.log(add);
+    //   add = 0;
+    // }, 500);
+    //
+    // let add = 0;
+    // let subtract = 0;
+
     return (
       <View style={styles.container}>
 
@@ -39,9 +49,21 @@ class P1Trade extends Component {
           <TouchableHighlight style={styles.button} underlayColor={'#9E9E9E'} onPress={() => this.props.minusTradeP1()}>
             <Text style={styles.minus}>-</Text>
           </TouchableHighlight>
-          <TouchableHighlight style={styles.button} underlayColor={'#9E9E9E'} onPress={() => this.props.addTradeP1()}>
+          {/* <TouchableHighlight style={styles.button} underlayColor={'#9E9E9E'} onPress={() => {
+            subtract++;
+            updateStore();
+          }}>
+            <Text style={styles.minus}>-</Text>
+          </TouchableHighlight> */}
+          <TouchableHighlight style={styles.button} underlayColor={'#9E9E9E'} onPress={() => this.props.addTradeP1() }>
             <Text style={styles.plus}>+</Text>
           </TouchableHighlight>
+          {/* <TouchableHighlight style={styles.button} underlayColor={'#9E9E9E'} onPress={() => {
+            add++;
+            updateStore();
+          }}>
+            <Text style={styles.plus}>+</Text>
+          </TouchableHighlight> */}
         </View>
 
       </View>

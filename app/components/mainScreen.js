@@ -19,7 +19,7 @@ class MainScreen extends Component {
           style={{ backgroundColor: '#212121' }}
           tabBarUnderlineStyle={{ backgroundColor: 'white' }}
           // activeTabStyle={{ backgroundColor: '#1E1E1E' }}
-          // locked={true}
+          locked={true}
           ref={tabView => { this.tabView = tabView; }}
           onChangeTab={({i, ref}) => this.props.tabChanged(i)}
         >
