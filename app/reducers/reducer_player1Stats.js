@@ -37,11 +37,6 @@ export default function(state = INITIAL_STATE, action) {
       } else {
         return state;
       }
-      // if(state.trade > 0) {
-      //   return { ...state, trade: state.trade - 1 };
-      // } else {
-      //   return state;
-      // }
     case ADD_TRADE_P1:
       if(lastItem && lastItem.type === 'trade' && lastItem.operator === '+') {
         lastItem.val += 1;
@@ -123,7 +118,7 @@ export default function(state = INITIAL_STATE, action) {
     case P1_ATTACKS:
       return { ...state, trade: 0, combat: 0 };
     case NEW_GAME:
-      return { ...state, authority: 50, trade: 0, combat: 0};
+      return { ...state, authority: 50, trade: 0, combat: 0, history: [] };
     default:
       return state;
   }

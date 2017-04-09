@@ -117,7 +117,7 @@ export default function(state = INITIAL_STATE, action) {
     case P2_ATTACKS:
       return { ...state, trade: 0, combat: 0 };
     case NEW_GAME:
-      return { ...state, authority: 50, trade: 0, combat: 0};
+      return { ...state, authority: 50, trade: 0, combat: 0, history: [] };
     default:
       return state;
   }
