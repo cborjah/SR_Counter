@@ -6,7 +6,7 @@ import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
 import P1Authority from './p1Authority';
 import P1Trade from './p1Trade';
 import P1Combat from './p1Combat';
-import AttackButton from '../attackButton';
+import ActionButton from '../actionButton';
 import P1Bases from './p1Bases';
 import P1History from './p1History';
 
@@ -32,7 +32,7 @@ class Player1 extends Component {
           </View>
 
           <View style={styles.fabContainer}>
-            <AttackButton
+            <ActionButton
               combatPoints={this.props.combat}
               p1={true}
               p2={false}
@@ -56,24 +56,15 @@ class Player1 extends Component {
 const styles = StyleSheet.create({
   player1: {
     flex: 1,
-    // flexDirection: 'column',
     // backgroundColor: '#E0E0E0',
   },
   history: {
     flex: 1,
     backgroundColor: '#424242',
-    // alignItems: 'center',
-    // justifyContent: 'center',
     elevation: 5,
   },
-  // playerNameText: {
-  //   fontSize: 20,
-  //   fontWeight: 'bold',
-  //   color: 'white',
-  // },
   playerStats: {
     flex: 15,
-    // flexDirection: 'row',
     // backgroundColor: '#76FF03'
   },
   statsTop: {
@@ -93,13 +84,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row'
     // backgroundColor: '#757575',
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
-  // tradeCombat: {
-  //   flex: 1,
-  //   flexDirection: 'row'
-  // },
   fabContainer: {
     height: 80,
     // backgroundColor: 'blue'

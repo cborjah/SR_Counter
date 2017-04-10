@@ -6,7 +6,7 @@ import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
 import P2Authority from './p2Authority';
 import P2Trade from './p2Trade';
 import P2Combat from './p2Combat';
-import AttackButton from '../attackButton';
+import ActionButton from '../actionButton';
 import P2Bases from './p2Bases';
 import P2History from './p2History';
 
@@ -32,7 +32,7 @@ class Player2 extends Component {
           </View>
 
           <View style={styles.fabContainer}>
-            <AttackButton
+            <ActionButton
               combatPoints={this.props.combat}
               p1={false}
               p2={true}
@@ -60,8 +60,6 @@ const styles = StyleSheet.create({
   history: {
     flex: 1,
     backgroundColor: '#424242',
-    // alignItems: 'center',
-    // justifyContent: 'center',
     elevation: 5,
   },
   playerNameText: {
@@ -71,7 +69,6 @@ const styles = StyleSheet.create({
   },
   playerStats: {
     flex: 15,
-    // flexDirection: 'row',
     // backgroundColor: '#76FF03'
   },
   statsTop: {
@@ -91,8 +88,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row'
     // backgroundColor: '#757575',
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
   fabContainer: {
     height: 80,
