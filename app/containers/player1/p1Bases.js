@@ -26,7 +26,7 @@ class P1Bases extends Component {
 
           <View style={styles.textContainer}>
             <Text style={styles.text}>{this.props.defense}</Text>
-            <Text style={styles.label}>Defense</Text>
+            <Text style={styles.label}>Outpost</Text>
           </View>
 
         </View>

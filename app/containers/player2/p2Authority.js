@@ -2,12 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, StyleSheet, TouchableHighlight, Dimensions } from 'react-native';
 import Svg, { Polygon, G } from 'react-native-svg';
+import { Actions } from 'react-native-router-flux';
 
 import { addAuthorityP2, minusAuthorityP2 } from '../../actions/player2';
 
 const { width, height } = Dimensions.get('window');
 
 class P2Authority extends Component {
+
+  componentDidUpdate() {
+    if(this.props.authority <= 0) {
+      Actions.winScreen({ type: 'replace', winner: this.props.name1 });
+    }
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -112,7 +120,8 @@ const styles = StyleSheet.create({
 
 function mapStateToProps(state) {
   return {
-    authority: state.player2Stats.authority
+    authority: state.player2Stats.authority,
+    name1: state.playerNames.name1
   };
 }
 

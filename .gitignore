@@ -5,6 +5,9 @@
 # Assets
 assets/
 
+# Android Folder
+android/
+
 # Xcode
 #
 build/
