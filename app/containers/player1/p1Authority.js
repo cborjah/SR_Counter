@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, StyleSheet, TouchableHighlight, Dimensions } from 'react-native';
-import Svg, { Polygon, G } from 'react-native-svg';
+import Svg, { Path, G } from 'react-native-svg';
 import { Actions } from 'react-native-router-flux';
 
 import { addAuthorityP1, minusAuthorityP1 } from '../../actions/player1';
@@ -22,13 +22,8 @@ class P1Authority extends Component {
 
         <View style={styles.authority}>
           <View style={styles.iconContainer}>
-            <Svg
-              height="192"
-              width="192"
-            >
-              <G id="Authority" stroke="#69F0AE" stroke-width="4" fill="#69F0AE" scale="0.8" rotate="180" x="179" y="169">
-                <Polygon id="Path-2" points="29 67.0120361 96.4487033 4 164 68.9696784 164 189 29.0907393 189" />
-              </G>
+            <Svg width={126 * 1.35} height={75 * 1.35} viewBox="0 0 126 75">
+              <Path fill="#6BEF81" fill-rule="evenodd" d="M30.134 0H95.91v50.674L62.975 75 30.09 51.407 30.134 0zm69.538 0H126l-10.274 9.524H99.672V0zm0 12.698h14.104l-10.258 9.524h-3.846v-9.524zM0 0h26.328v9.524H10.274L0 0zm12.224 12.698h14.104v9.524h-3.847l-10.257-9.524z"/>
             </Svg>
           </View>
 
@@ -62,7 +57,8 @@ const styles = StyleSheet.create({
     flex: 4,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#212121'
+    // backgroundColor: '#212121',
+    // backgroundColor: 'orange'
   },
   buttonContainer: {
     flex: 1,
@@ -105,12 +101,14 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    // backgroundColor: 'orange'
   },
   iconContainer: {
-    flex: 5,
+    flex: 1,
     // backgroundColor: 'orange',
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   label: {
     color: 'grey',

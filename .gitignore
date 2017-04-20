@@ -5,9 +5,6 @@
 # Assets
 assets/
 
-# To avoid uploading keystore values
-android/
-
 # Xcode
 #
 build/
