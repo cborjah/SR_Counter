@@ -21,25 +21,27 @@ class P1Authority extends Component {
       <View style={styles.container}>
 
         <View style={styles.authority}>
-        
           <View style={styles.iconContainer}>
-            <Svg width={180} height={180} viewBox="0 0 126 75">
+            <Svg width={126 * 1.2} height={128} viewBox="0 -5 126 75">
               <Path fill="#6BEF81" fill-rule="evenodd" d="M30.134 0H95.91v50.674L62.975 75 30.09 51.407 30.134 0zm69.538 0H126l-10.274 9.524H99.672V0zm0 12.698h14.104l-10.258 9.524h-3.846v-9.524zM0 0h26.328v9.524H10.274L0 0zm12.224 12.698h14.104v9.524h-3.847l-10.257-9.524z"/>
             </Svg>
           </View>
 
           <View style={styles.textContainer}>
             <Text style={styles.text}>{this.props.authority}</Text>
-            <Text style={styles.label}>Authority</Text>
           </View>
 
         </View>
 
+        <View style={styles.labelContainer}>
+          <Text style={styles.label}>Authority</Text>
+        </View>
+
         <View style={styles.buttonContainer}>
-          <TouchableHighlight style={styles.button} underlayColor={'#9E9E9E'} onPress={() => this.props.minusAuthorityP1()}>
+          <TouchableHighlight style={styles.minusButton} underlayColor={'#9E9E9E'} onPress={() => this.props.minusAuthorityP1()}>
             <Text style={styles.minus}>-</Text>
           </TouchableHighlight>
-          <TouchableHighlight style={styles.button} underlayColor={'#9E9E9E'} onPress={() => this.props.addAuthorityP1()}>
+          <TouchableHighlight style={styles.plusButton} underlayColor={'#9E9E9E'} onPress={() => this.props.addAuthorityP1()}>
             <Text style={styles.plus}>+</Text>
           </TouchableHighlight>
         </View>
@@ -62,37 +64,51 @@ const styles = StyleSheet.create({
     // backgroundColor: 'orange'
   },
   buttonContainer: {
-    flex: 1,
+    flex: 2,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     // backgroundColor: 'white'
   },
   text: {
-    fontSize: 50
+    fontSize: 50,
+    color: 'black'
   },
-  button: {
+  minusButton: {
+    // flex: 1,
     alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: '#424242',
-    // width: 40,
-    // height: 40,
     width: width / 6,
-    height: height / 16,
-    borderRadius: 2,
+    height: height / 19,
+    borderTopLeftRadius: 10,
+    borderBottomLeftRadius: 10,
     elevation: 5,
-    marginLeft: 1,
     marginRight: 1
   },
   minus: {
-    fontSize: 50,
+    fontSize: 30,
     position: 'relative',
-    bottom: 17,
+    bottom: 2,
+    left: 1,
     color: 'white'
   },
+  plusButton: {
+    // flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#424242',
+    width: width / 6,
+    height: height / 19,
+    borderTopRightRadius: 10,
+    borderBottomRightRadius: 10,
+    elevation: 5,
+    marginLeft: 1,
+  },
   plus: {
-    fontSize: 40,
+    fontSize: 25,
     position: 'relative',
-    bottom: 9,
+    bottom: 1,
     color: 'white'
   },
   textContainer: {
@@ -107,14 +123,20 @@ const styles = StyleSheet.create({
   },
   iconContainer: {
     flex: 1,
-    backgroundColor: 'orange',
+    // backgroundColor: 'orange',
     alignItems: 'center',
     justifyContent: 'center'
   },
+  labelContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    // backgroundColor: 'red'
+  },
   label: {
-    color: 'grey',
-    position: 'relative',
-    top: 38,
+    color: 'white',
+    // position: 'relative',
+    // top: 38,
     fontSize: 20
   }
 });

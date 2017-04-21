@@ -27,20 +27,20 @@ class GameSetup extends Component {
         <View style={styles.input}>
           <TextInput
             style={[styles.textInput, { marginBottom: 15, opacity: this.state.isFocused1 ? 1 : 0.5 }]}
-            placeholder='Player 1'
+            placeholder='PLAYER 1'
             placeholderTextColor='#FFFFFF'
             maxLength={10}
-            onChangeText={(text) => this.setState({ input1: text })}
+            onChangeText={(text) => this.setState({ input1: text.toUpperCase() })}
             onFocus={() => this.setState({ isFocused1: true })}
             onBlur={() => this.setState({ isFocused1: false })}
             autoCorrect={false}
             underlineColorAndroid='#0091EA'/>
           <TextInput
             style={[styles.textInput, { marginTop: 15, opacity: this.state.isFocused2 ? 1 : 0.5 }]}
-            placeholder='Player 2'
+            placeholder='PLAYER 2'
             placeholderTextColor='#FFFFFF'
             maxLength={10}
-            onChangeText={(text) => this.setState({ input2: text })}
+            onChangeText={(text) => this.setState({ input2: text.toUpperCase() })}
             onFocus={() => this.setState({ isFocused2: true })}
             onBlur={() => this.setState({ isFocused2: false })}
             autoCorrect={false}
