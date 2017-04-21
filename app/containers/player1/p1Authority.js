@@ -21,8 +21,9 @@ class P1Authority extends Component {
       <View style={styles.container}>
 
         <View style={styles.authority}>
+        
           <View style={styles.iconContainer}>
-            <Svg width={126 * 1.35} height={75 * 1.35} viewBox="0 0 126 75">
+            <Svg width={180} height={180} viewBox="0 0 126 75">
               <Path fill="#6BEF81" fill-rule="evenodd" d="M30.134 0H95.91v50.674L62.975 75 30.09 51.407 30.134 0zm69.538 0H126l-10.274 9.524H99.672V0zm0 12.698h14.104l-10.258 9.524h-3.846v-9.524zM0 0h26.328v9.524H10.274L0 0zm12.224 12.698h14.104v9.524h-3.847l-10.257-9.524z"/>
             </Svg>
           </View>
@@ -106,7 +107,7 @@ const styles = StyleSheet.create({
   },
   iconContainer: {
     flex: 1,
-    // backgroundColor: 'orange',
+    backgroundColor: 'orange',
     alignItems: 'center',
     justifyContent: 'center'
   },
