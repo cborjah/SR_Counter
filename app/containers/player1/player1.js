@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight, Dimensions } from 'react-native';
 // import { IndicatorViewPager } from 'rn-viewpager';
 
 import P1Authority from './p1Authority';
@@ -9,6 +9,8 @@ import P1Combat from './p1Combat';
 import ActionButton from '../actionButton';
 import P1Bases from './p1Bases';
 import P1History from './p1History';
+
+const { width, height } = Dimensions.get('window');
 
 class Player1 extends Component {
   constructor(props) {
@@ -39,6 +41,9 @@ class Player1 extends Component {
               setPage={() => {
                 this.props.changeTab();
             }}/>
+            <View style={styles.textContainer}>
+              <Text style={{color: '#6c6f73'}}>History</Text>
+            </View>
           </View>
 
         </View>
@@ -86,8 +91,13 @@ const styles = StyleSheet.create({
     // backgroundColor: '#757575',
   },
   fabContainer: {
-    height: 80,
+    height: height * 0.15,
     // backgroundColor: 'blue'
+  },
+  textContainer: {
+    // backgroundColor: 'white'
+    paddingLeft: (width * 0.1) / 5,
+    paddingBottom: (height * 0.1) / 10
   }
 });
 
