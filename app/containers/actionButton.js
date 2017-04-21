@@ -45,14 +45,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    fontSize: 22,
+    fontSize: 18,
     color: 'white'
   },
   button: {
     backgroundColor: '#EF5350',
     width: width / 1.19,
     alignItems: 'center',
-    borderRadius: 5,
+    borderRadius: 2,
     elevation: 10,
     paddingTop: 9,
     paddingBottom: 9

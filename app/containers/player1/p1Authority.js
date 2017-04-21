@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 50,
+    fontWeight: '900',
     color: 'black'
   },
   minusButton: {

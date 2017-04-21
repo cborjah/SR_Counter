@@ -13,35 +13,36 @@ class P1Combat extends Component {
 
         <View style={styles.combat}>
           <View style={styles.iconContainer}>
-            <Svg
-              height="192"
-              width="192"
-            >
-              <G id="Group" x="39.5" y="15.5" scale="0.7">
-              {/* <G id="Group" scale="0.7"> */}
-                <Path d="M90,165 C131.421356,165 165,131.421356 165,90 C165,48.5786438 131.421356,15 90,15 C48.5786438,15 15,48.5786438 15,90 C15,131.421356 48.5786438,165 90,165 Z" id="Oval" stroke="#EF5350" stroke-width="4" fill="#EF5350" />
-                <Rect id="Rectangle-2" fill="#EF5350" x="88" y="0" width="4" height="15" rx="2" />
-                <Rect id="Rectangle" fill="#EF5350" x="0" y="88" width="15" height="4" rx="2" />
-                <Rect id="Rectangle" fill="#EF5350" x="165" y="88" width="15" height="4" rx="2" />
-                <Rect id="Rectangle-2-Copy" fill="#EF5350" x="88" y="165" width="4" height="15" rx="2" />
+            <Svg width={85 * 1.2} height={85 * 1.2} viewBox="0 0 85 85">
+              <G fill="#D34314" fill-rule="evenodd">
+                  <Path d="M41.897 72.943c16.647 0 30.142-13.495 30.142-30.142 0-16.646-13.495-30.141-30.142-30.141S11.755 26.155 11.755 42.8c0 16.647 13.495 30.142 30.142 30.142z"/>
+                  <Path d="M41.897 79.725c-20.392 0-36.924-16.531-36.924-36.924 0-20.392 16.532-36.923 36.924-36.923 20.393 0 36.924 16.531 36.924 36.923 0 20.393-16.531 36.924-36.924 36.924zm0-3.165c18.645 0 33.759-15.114 33.759-33.759 0-18.644-15.114-33.758-33.759-33.758-18.644 0-33.759 15.114-33.759 33.758 0 18.645 15.115 33.76 33.76 33.76z"/>
+                  <Rect width="2.713" height="13.564" x="40.691" rx="1.356"/>
+                  <Rect width="13.564" height="2.713" y="41.696" rx="1.356"/>
+                  <Rect width="13.564" height="2.713" x="70.833" y="41.696" rx="1.356"/>
+                  <Rect width="2.713" height="13.564" x="40.691" y="71.436" rx="1.356"/>
               </G>
             </Svg>
           </View>
 
           <View style={styles.textContainer}>
             <Text style={styles.text}>{this.props.combat}</Text>
-            <Text style={styles.label}>Combat</Text>
           </View>
 
         </View>
 
+        <View style={styles.labelContainer}>
+          <Text style={styles.label}>Combat</Text>
+        </View>
+
         <View style={styles.buttonContainer}>
-          <TouchableHighlight style={styles.button} underlayColor={'#9E9E9E'} onPress={() => this.props.minusCombatP1()}>
+          <TouchableHighlight style={styles.minusButton} underlayColor={'#9E9E9E'} onPress={() => this.props.minusCombatP1()}>
             <Text style={styles.minus}>-</Text>
           </TouchableHighlight>
-          <TouchableHighlight style={styles.button} underlayColor={'#9E9E9E'} onPress={() => this.props.addCombatP1()}>
+          <TouchableHighlight style={styles.plusButton} underlayColor={'#9E9E9E'} onPress={() => this.props.addCombatP1()}>
             <Text style={styles.plus}>+</Text>
           </TouchableHighlight>
+
         </View>
 
       </View>
@@ -60,61 +61,78 @@ const styles = StyleSheet.create({
     // backgroundColor: '#212121'
   },
   buttonContainer: {
-    flex: 1,
+    flex: 2,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     // backgroundColor: 'white'
     // backgroundColor: '#757575'
   },
-  text: {
-    fontSize: 50,
-  },
-  button: {
+  minusButton: {
     // flex: 1,
     alignItems: 'center',
-    // justifyContent: 'center',
+    justifyContent: 'center',
     backgroundColor: '#424242',
-    // width: 60,
-    // height: 40,
     width: width / 6,
-    height: height / 16,
-    borderRadius: 2,
+    height: height / 19,
+    borderTopLeftRadius: 10,
+    borderBottomLeftRadius: 10,
     elevation: 5,
-    marginRight: 1,
-    marginLeft: 1
+    marginRight: 1
   },
   minus: {
-    fontSize: 50,
+    fontSize: 30,
     position: 'relative',
-    bottom: 17,
+    bottom: 2,
+    left: 1,
     color: 'white',
   },
+  plusButton: {
+    // flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#424242',
+    width: width / 6,
+    height: height / 19,
+    borderTopRightRadius: 10,
+    borderBottomRightRadius: 10,
+    elevation: 5,
+    marginLeft: 1,
+  },
   plus: {
-    fontSize: 40,
+    fontSize: 25,
     position: 'relative',
-    bottom: 9,
+    bottom: 1,
     color: 'white',
   },
   textContainer: {
     position: 'absolute',
     top: 0,
     left: 0,
-    right: 0,
+    right: 1,
     bottom: 0,
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: 'grey'
+  },
+  text: {
+    fontSize: 50,
+    fontWeight: '900',
+    color: 'black'
   },
   iconContainer: {
-    flex: 5,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
     // backgroundColor: 'orange',
-    alignItems: 'center'
+  },
+  labelContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    // backgroundColor: 'red'
   },
   label: {
-    color: 'grey',
-    position: 'relative',
-    top: 38,
+    color: 'white',
     fontSize: 20
   }
 });

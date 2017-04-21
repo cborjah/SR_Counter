@@ -14,7 +14,7 @@ class P1Bases extends Component {
 
         <View style={styles.bases}>
           <View style={styles.iconContainer}>
-            <Svg width={82 * 1.2} height={82 * 1.2} viewBox="0 0 82 82">
+            <Svg width={82 * 1.1} height={82 * 1.1} viewBox="0 0 82 82">
               <Path fill="#000" fillRule="evenodd" stroke="#FFF" strokeLinecap="round" strokeLineJoin="round" strokeWidth="2" d="M81 1v16.444C81 70.284 41 81 41 81S1 70.284 1 17.444c0-4.151.14-11.412.236-16.05C5.12 7.723 12.516 11.997 21 11.997c8.658 0 16.183-4.452 20-10.997 3.817 6.545 11.342 10.997 20 10.997S77.183 7.545 81 1z"/>
             </Svg>
 
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     flex: 4,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#212121'
+    // backgroundColor: '#212121'
   },
   buttonContainer: {
     flex: 2,
@@ -109,6 +109,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 50,
     color: 'white',
+    fontWeight: '100'
     // justifyContent: 'center',
     // alignItems: 'center'
   },

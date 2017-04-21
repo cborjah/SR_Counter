@@ -13,10 +13,10 @@ class MainScreen extends Component {
     return (
       <View style={styles.container}>
         <ScrollableTabView
-          renderTabBar={() => <DefaultTabBar tabStyle={{ paddingBottom: 0, backgroundColor: '#212121', height: 50 }} activeTextColor='white' inactiveTextColor='#444' />}
+          renderTabBar={() => <DefaultTabBar tabStyle={{ paddingBottom: 0, backgroundColor: '#070d18', height: 50 }} activeTextColor='white' inactiveTextColor='#444' />}
           tabBarPosition='top'
           // style={this.props.activeTab ? { backgroundColor: '#212121', transform: [{ rotate: '180deg'}]} : { backgroundColor: '#212121' }}
-          style={{ backgroundColor: '#212121' }}
+          style={{ backgroundColor: '#070d18' }}
           tabBarUnderlineStyle={{ backgroundColor: 'white' }}
           // activeTabStyle={{ backgroundColor: '#1E1E1E' }}
           locked={true}
