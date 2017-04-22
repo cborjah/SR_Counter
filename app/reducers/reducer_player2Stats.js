@@ -39,8 +39,11 @@ export default function(state = INITIAL_STATE, action) {
       }
     case ADD_TRADE_P2:
       if(lastItem && lastItem.type === 'trade' && lastItem.operator === '+') {
-        lastItem.val += 1;
-        return { ...state, trade: state.trade + 1, history: updatedHistory };
+        if(state.trade < 99) {
+          lastItem.val += 1;
+          return { ...state, trade: state.trade + 1, history: updatedHistory };
+        }
+        return state;
       } else {
         updatedHistory.push({ val: 1, operator: '+', type: 'trade', color: "#FFEE58" });
         return { ...state, trade: state.trade + 1, history: updatedHistory };
@@ -59,8 +62,11 @@ export default function(state = INITIAL_STATE, action) {
       }
     case ADD_COMBAT_P2:
       if(lastItem && lastItem.type === 'combat' && lastItem.operator === '+') {
-        lastItem.val += 1;
-        return { ...state, combat: state.combat + 1, history: updatedHistory };
+        if(state.combat < 99) {
+          lastItem.val += 1;
+          return { ...state, combat: state.combat + 1, history: updatedHistory };
+        }
+        return state;
       } else {
         updatedHistory.push({ val: 1, operator: '+', type: 'combat', color: "#EF5350" });
         return { ...state, combat: state.combat + 1, history: updatedHistory };
@@ -76,8 +82,11 @@ export default function(state = INITIAL_STATE, action) {
     }
     case ADD_AUTHORITY_P2: {
       if(lastItem && lastItem.type === 'authority' && lastItem.operator === '+') {
-        lastItem.val += 1;
-        return { ...state, authority: state.authority + 1, history: updatedHistory };
+        if(state.authority < 99) {
+          lastItem.val += 1;
+          return { ...state, authority: state.authority + 1, history: updatedHistory };
+        }
+        return state;
       } else {
         updatedHistory.push({ val: 1, operator: '+', type: 'authority', color: "#69F0AE" });
         return { ...state, authority: state.authority + 1, history: updatedHistory };
@@ -98,8 +107,11 @@ export default function(state = INITIAL_STATE, action) {
     }
     case ADD_DEFENSE_P2: {
       if(lastItem && lastItem.type === 'defense' && lastItem.operator === '+') {
-        lastItem.val += 1;
-        return { ...state, defense: state.defense + 1, history: updatedHistory };
+        if(state.defense < 99) {
+          lastItem.val += 1;
+          return { ...state, defense: state.defense + 1, history: updatedHistory };
+        }
+        return state;
       } else {
         updatedHistory.push({ val: 1, operator: '+', type: 'defense', color: "#D8D8D8" });
         return { ...state, defense: state.defense + 1, history: updatedHistory };

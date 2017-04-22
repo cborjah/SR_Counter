@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, StyleSheet, TouchableHighlight, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight, Dimensions, Platform } from 'react-native';
 import Svg, { Path, G } from 'react-native-svg';
 
 import { addDefenseP1, minusDefenseP1 } from '../../actions/player1';
@@ -108,9 +108,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0)'
   },
   text: {
-    fontSize: 50,
+    fontSize: (Platform.OS === 'android') ? 50 : 45,
+    fontWeight: (Platform.OS === 'android') ? '100' : '400',
     color: 'white',
-    fontWeight: '100'
     // justifyContent: 'center',
     // alignItems: 'center'
   },

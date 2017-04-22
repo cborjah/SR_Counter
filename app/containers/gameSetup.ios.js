@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, StyleSheet, TextInput, TouchableHighlight } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableHighlight, Dimensions } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { setNames } from '../actions/gameSetup';
+
+const { width, height } = Dimensions.get('window');
 
 class GameSetup extends Component {
   constructor(props) {
@@ -24,10 +26,32 @@ class GameSetup extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.input}>
-          <TextInput
-            style={{height: 40}}
-          />
+        <View style={styles.inputContainer}>
+          <View style={{ borderBottomWidth: 1, borderColor: '#40C4FF', marginBottom: (height * 0.1) / 2 }}>
+            <TextInput
+            style={{ height: 40, color: '#FFFFFF', opacity: this.state.isFocused1 ? 1 : 0.5 }}
+            onFocus={() => this.setState({ isFocused1: true })}
+            onBlur={() => this.setState({ isFocused1: false })}
+            // style={[styles.textInput, { marginBottom: 15, opacity: this.state.isFocused1 ? 1 : 0.5 }]}
+            placeholder='PLAYER 1'
+            placeholderTextColor='#FFFFFF'
+            autoCapitalize='characters'
+            onChangeText={(text) => this.setState({input1: text})}
+            />
+          </View>
+
+          <View style={{ borderBottomWidth: 1, borderColor: '#40C4FF' }}>
+            <TextInput
+            style={{ height: 40, color: '#FFFFFF', opacity: this.state.isFocused2 ? 1 : 0.5 }}
+            onFocus={() => this.setState({ isFocused2: true })}
+            onBlur={() => this.setState({ isFocused2: false })}
+            // style={[styles.textInput, { marginBottom: 15, opacity: this.state.isFocused1 ? 1 : 0.5 }]}
+            placeholder='PLAYER 2'
+            placeholderTextColor='#FFFFFF'
+            autoCapitalize='characters'
+            onChangeText={(text) => this.setState({input2: text})}
+            />
+          </View>
         </View>
         <TouchableHighlight
           style={styles.readyBtn}
@@ -45,11 +69,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
+    backgroundColor: '#424242',
   },
-  input: {
+  inputContainer: {
     flex: 11,
     alignSelf: 'stretch',
-    backgroundColor: '#424242',
     paddingLeft: 40,
     paddingRight: 40,
     paddingTop: 10,

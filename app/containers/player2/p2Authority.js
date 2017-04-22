@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, StyleSheet, TouchableHighlight, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight, Dimensions, Platform } from 'react-native';
 import Svg, { Path, G } from 'react-native-svg';
 import { Actions } from 'react-native-router-flux';
 
@@ -118,8 +118,8 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   text: {
-    fontSize: 50,
-    fontWeight: '900',
+    fontSize: (Platform.OS === 'android') ? 50 : 45,
+    fontWeight: (Platform.OS === 'android') ? '900' : '700',
     color: 'black',
     backgroundColor: 'rgba(0,0,0,0)'
   },

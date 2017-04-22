@@ -30,20 +30,22 @@ class GameSetup extends Component {
             placeholder='PLAYER 1'
             placeholderTextColor='#FFFFFF'
             maxLength={10}
-            onChangeText={(text) => this.setState({ input1: text.toUpperCase() })}
+            onChangeText={(text) => this.setState({ input1: text })}
             onFocus={() => this.setState({ isFocused1: true })}
             onBlur={() => this.setState({ isFocused1: false })}
             autoCorrect={false}
+            autoCapitalize='characters'
             underlineColorAndroid='#0091EA'/>
           <TextInput
             style={[styles.textInput, { marginTop: 15, opacity: this.state.isFocused2 ? 1 : 0.5 }]}
             placeholder='PLAYER 2'
             placeholderTextColor='#FFFFFF'
             maxLength={10}
-            onChangeText={(text) => this.setState({ input2: text.toUpperCase() })}
+            onChangeText={(text) => this.setState({ input2: text })}
             onFocus={() => this.setState({ isFocused2: true })}
             onBlur={() => this.setState({ isFocused2: false })}
             autoCorrect={false}
+            autoCapitalize='characters'
             underlineColorAndroid='#0091EA'/>
         </View>
         <TouchableHighlight

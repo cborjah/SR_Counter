@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, StyleSheet, TouchableHighlight, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight, Dimensions, Platform } from 'react-native';
 import { minusCombatP2, addCombatP2 } from '../../actions/player2';
 import Svg, { Path, Rect, G } from 'react-native-svg';
 
@@ -117,8 +117,8 @@ const styles = StyleSheet.create({
     // backgroundColor: 'grey'
   },
   text: {
-    fontSize: 50,
-    fontWeight: '900',
+    fontSize: (Platform.OS === 'android') ? 50 : 45,
+    fontWeight: (Platform.OS === 'android') ? '900' : '700',
     color: 'black'
   },
   iconContainer: {

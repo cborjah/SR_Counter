@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, StyleSheet, Button, TouchableHighlight, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Button, TouchableHighlight, Dimensions, Platform } from 'react-native';
 import { minusTradeP1, addTradeP1 } from '../../actions/player1';
 import Svg, { Path } from 'react-native-svg';
 import _ from 'lodash';
@@ -72,8 +72,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0)'
   },
   text: {
-    fontSize: 50,
-    fontWeight: '900',
+    fontSize: (Platform.OS === 'android') ? 50 : 45,
+    fontWeight: (Platform.OS === 'android') ? '900' : '700',
     color: 'black'
   },
   minusButton: {

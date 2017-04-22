@@ -9,8 +9,8 @@ class P1History extends Component {
   renderHistory() {
     return this.props.history.map((item) => {
       return (
-        <View style={{ width: (width * 0.1), backgroundColor: item.color, alignItems: 'center', justifyContent: 'center', alignSelf: 'stretch', paddingLeft: 5, paddingRight: 5, marginRight: 2 }}>
-          <Text style={{ fontSize: 20 }}>{item.operator + item.val}</Text>
+        <View style={{ width: (width * 0.25) / 2, backgroundColor: item.color, alignItems: 'center', justifyContent: 'center', alignSelf: 'stretch', marginRight: 2 }}>
+          <Text style={{ fontSize: (height * 0.1) / 4 }}>{item.operator + item.val}</Text>
         </View>
       );
     });
