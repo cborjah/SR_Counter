@@ -63,10 +63,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
   },
-  // text: {
-  //   flex: 1,
-  //   color: 'white',
-  // },
   input: {
     flex: 11,
     alignSelf: 'stretch',

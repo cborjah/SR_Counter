@@ -76,7 +76,8 @@ const styles = StyleSheet.create({
     position: 'relative',
     bottom: 2,
     left: 1,
-    color: 'white'
+    color: 'white',
+    backgroundColor: 'rgba(0,0,0,0)'
   },
   plusButton: {
     alignItems: 'center',
@@ -93,7 +94,8 @@ const styles = StyleSheet.create({
     fontSize: 25,
     position: 'relative',
     bottom: 1,
-    color: 'white'
+    color: 'white',
+    backgroundColor: 'rgba(0,0,0,0)'
   },
   textContainer: {
     position: 'absolute',
@@ -102,7 +104,8 @@ const styles = StyleSheet.create({
     right: 1,
     bottom: 0,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    backgroundColor: 'rgba(0,0,0,0)'
   },
   text: {
     fontSize: 50,

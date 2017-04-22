@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
     bottom: 2,
     left: 1,
     color: 'white',
+    backgroundColor: 'rgba(0,0,0,0)'
   },
   plusButton: {
     // flex: 1,
@@ -103,6 +104,7 @@ const styles = StyleSheet.create({
     position: 'relative',
     bottom: 1,
     color: 'white',
+    backgroundColor: 'rgba(0,0,0,0)'
   },
   textContainer: {
     position: 'absolute',
@@ -112,6 +114,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0)'
   },
   text: {
     fontSize: 50,

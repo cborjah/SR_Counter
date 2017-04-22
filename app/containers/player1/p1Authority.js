@@ -70,11 +70,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     // backgroundColor: 'white'
   },
-  text: {
-    fontSize: 50,
-    fontWeight: '900',
-    color: 'black'
-  },
   minusButton: {
     // flex: 1,
     alignItems: 'center',
@@ -92,7 +87,8 @@ const styles = StyleSheet.create({
     position: 'relative',
     bottom: 2,
     left: 1,
-    color: 'white'
+    color: 'white',
+    backgroundColor: 'rgba(0,0,0,0)'
   },
   plusButton: {
     // flex: 1,
@@ -110,7 +106,8 @@ const styles = StyleSheet.create({
     fontSize: 25,
     position: 'relative',
     bottom: 1,
-    color: 'white'
+    color: 'white',
+    backgroundColor: 'rgba(0,0,0,0)'
   },
   textContainer: {
     position: 'absolute',
@@ -120,7 +117,13 @@ const styles = StyleSheet.create({
     bottom: 0,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0)'
     // backgroundColor: 'orange'
+  },
+  text: {
+    fontSize: 50,
+    fontWeight: '900',
+    color: 'black'
   },
   iconContainer: {
     flex: 1,
