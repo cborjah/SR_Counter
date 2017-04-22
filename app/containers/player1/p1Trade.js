@@ -22,7 +22,6 @@ class P1Trade extends Component {
           <View style={styles.textContainer}>
             <Text style={styles.text}>{this.props.trade}</Text>
           </View>
-
         </View>
 
         <View style={styles.labelContainer}>
@@ -37,7 +36,6 @@ class P1Trade extends Component {
             <Text style={styles.plus}>+</Text>
           </TouchableHighlight>
         </View>
-
       </View>
     );
   }
@@ -117,8 +115,8 @@ const styles = StyleSheet.create({
   iconContainer: {
     flex: 1,
     alignItems: 'center',
-    // backgroundColor: 'orange',
     justifyContent: 'center'
+    // backgroundColor: 'orange',
   },
   labelContainer: {
     flex: 1,

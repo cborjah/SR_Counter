@@ -13,38 +13,28 @@ class P2Trade extends Component {
 
         <View style={styles.trade}>
           <View style={styles.iconContainer}>
-            <Svg
-              height="192"
-              width="192"
-            >
-              <Path
-                d="M96,171 C137.421356,171 171,137.421356 171,96 C171,54.5786438 137.421356,21 96,21 C54.5786438,21 21,54.5786438 21,96 C21,137.421356 54.5786438,171 96,171 Z"
-                id="Oval"
-                scale={0.7}
-                fill="#FFEE58"
-                x="35"
-                y="11"
-              />
+            <Svg width={75 * 1.2} height={75 * 1.2} viewBox="0 0 75 75">
+              <Path fill="#F4D719" fill-rule="evenodd" d="M37.5 75C58.21 75 75 58.21 75 37.5S58.21 0 37.5 0 0 16.79 0 37.5 16.79 75 37.5 75z"/>
             </Svg>
           </View>
 
           <View style={styles.textContainer}>
             <Text style={styles.text}>{this.props.trade}</Text>
-            <Text style={styles.label}>Trade</Text>
           </View>
-
         </View>
 
-        <View style={styles.
-          buttonContainer}>
-          <TouchableHighlight style={styles.button} underlayColor={'#9E9E9E'} onPress={() => this.props.minusTradeP2()}>
+        <View style={styles.labelContainer}>
+          <Text style={styles.label}>Trade</Text>
+        </View>
+
+        <View style={styles.buttonContainer}>
+          <TouchableHighlight style={styles.minusButton} underlayColor={'#9E9E9E'} onPress={() => this.props.minusTradeP2()}>
             <Text style={styles.minus}>-</Text>
           </TouchableHighlight>
-          <TouchableHighlight style={styles.button} underlayColor={'#9E9E9E'} onPress={() => this.props.addTradeP2()}>
+          <TouchableHighlight style={styles.plusButton} underlayColor={'#9E9E9E'} onPress={() => this.props.addTradeP2()}>
             <Text style={styles.plus}>+</Text>
           </TouchableHighlight>
         </View>
-
       </View>
     );
   }
@@ -62,7 +52,7 @@ const styles = StyleSheet.create({
     // backgroundColor: '#FFEB3B'
   },
   buttonContainer: {
-    flex: 1,
+    flex: 2,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
@@ -78,42 +68,61 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   text: {
-    fontSize: 50
+    fontSize: 50,
+    fontWeight: '900',
+    color: 'black'
   },
-  button: {
+  minusButton: {
     // flex: 1,
     alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: '#424242',
-    // width: 40,
-    // height: 40,
     width: width / 6,
-    height: height / 16,
-    borderRadius: 2,
+    height: height / 19,
+    borderTopLeftRadius: 10,
+    borderBottomLeftRadius: 10,
     elevation: 5,
-    marginLeft: 1,
     marginRight: 1
   },
   minus: {
-    fontSize: 50,
+    fontSize: 30,
     position: 'relative',
-    bottom: 17,
+    bottom: 2,
+    left: 1,
     color: 'white'
   },
+  plusButton: {
+    // flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#424242',
+    width: width / 6,
+    height: height / 19,
+    borderTopRightRadius: 10,
+    borderBottomRightRadius: 10,
+    elevation: 5,
+    marginLeft: 1,
+  },
   plus: {
-    fontSize: 40,
+    fontSize: 25,
     position: 'relative',
-    bottom: 9,
+    bottom: 1,
     color: 'white'
   },
   iconContainer: {
-    flex: 5,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
     // backgroundColor: 'orange',
-    alignItems: 'center'
+  },
+  labelContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    // backgroundColor: 'red'
   },
   label: {
-    color: 'grey',
-    position: 'relative',
-    top: 38,
+    color: 'white',
     fontSize: 20
   }
 });

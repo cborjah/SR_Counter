@@ -124,9 +124,9 @@ const styles = StyleSheet.create({
   },
   iconContainer: {
     flex: 1,
-    // backgroundColor: 'orange',
     alignItems: 'center',
     justifyContent: 'center'
+    // backgroundColor: 'orange',
   },
   labelContainer: {
     flex: 1,
@@ -136,8 +136,6 @@ const styles = StyleSheet.create({
   },
   label: {
     color: 'white',
-    // position: 'relative',
-    // top: 38,
     fontSize: 20
   }
 });

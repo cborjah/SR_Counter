@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, StyleSheet, TouchableHighlight, Dimensions } from 'react-native';
-// import { IndicatorViewPager } from 'rn-viewpager';
 
 import P1Authority from './p1Authority';
 import P1Trade from './p1Trade';

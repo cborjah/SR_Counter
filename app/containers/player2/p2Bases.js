@@ -14,28 +14,26 @@ class P2Bases extends Component {
 
         <View style={styles.bases}>
           <View style={styles.iconContainer}>
-            <Svg
-              height="192"
-              width="192"
-            >
-              <G id="Defense" stroke="#979797" stroke-width="4" fill="#D8D8D8" scale="0.7" x="34.8" y="11">
-              <Path d="M175.858348,9 C175.952231,9.00034334 176,9.00051958 176,9.00051958 L176,51.4592228 C176,161.651785 96,184 96,184 C96,184 16,161.651785 16,51.4592228 C16,40.9074183 16.4136815,20.7156093 16.5823039,12.5468309 C19.8397589,31.9961177 36.3734027,46.7958211 56.2797203,46.7958211 C76.2330636,46.7958211 92.7977795,31.9261108 96,12.408915 C99.2022205,31.9261108 115.766936,46.7958211 135.72028,46.7958211 C156.820291,46.7958211 174.131012,30.1679551 175.858348,9 Z" id="Combined-Shape" />
-              </G>
+            <Svg width={82 * 1.1} height={82 * 1.1} viewBox="0 0 82 82">
+              <Path fill="#000" fillRule="evenodd" stroke="#FFF" strokeLinecap="round" strokeLineJoin="round" strokeWidth="2" d="M81 1v16.444C81 70.284 41 81 41 81S1 70.284 1 17.444c0-4.151.14-11.412.236-16.05C5.12 7.723 12.516 11.997 21 11.997c8.658 0 16.183-4.452 20-10.997 3.817 6.545 11.342 10.997 20 10.997S77.183 7.545 81 1z"/>
             </Svg>
-          </View>
 
-          <View style={styles.textContainer}>
-            <Text style={styles.text}>{this.props.defense}</Text>
-            <Text style={styles.label}>Outpost</Text>
+            <View style={styles.textContainer}>
+              <Text style={styles.text}>{this.props.defense}</Text>
+            </View>
           </View>
 
         </View>
 
+        <View style={styles.labelContainer}>
+          <Text style={styles.label}>Defense</Text>
+        </View>
+
         <View style={styles.buttonContainer}>
-          <TouchableHighlight style={styles.button} underlayColor={'#9E9E9E'} onPress={() => this.props.minusDefenseP2()}>
+          <TouchableHighlight style={styles.minusButton} underlayColor={'#9E9E9E'} onPress={() => this.props.minusDefenseP2()}>
             <Text style={styles.minus}>-</Text>
           </TouchableHighlight>
-          <TouchableHighlight style={styles.button} underlayColor={'#9E9E9E'} onPress={() => this.props.addDefenseP2()}>
+          <TouchableHighlight style={styles.plusButton} underlayColor={'#9E9E9E'} onPress={() => this.props.addDefenseP2()}>
             <Text style={styles.plus}>+</Text>
           </TouchableHighlight>
         </View>
@@ -53,39 +51,49 @@ const styles = StyleSheet.create({
     flex: 4,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#212121'
+    // backgroundColor: '#212121'
   },
   buttonContainer: {
-    flex: 1,
+    flex: 2,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     // backgroundColor: 'pink'
   },
-  button: {
+  minusButton: {
     alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: '#424242',
     width: width / 6,
-    height: height / 16,
-    borderRadius: 2,
+    height: height / 19,
+    borderTopLeftRadius: 10,
+    borderBottomLeftRadius: 10,
     elevation: 5,
-    marginLeft: 1,
     marginRight: 1
   },
   minus: {
-    fontSize: 50,
+    fontSize: 30,
     position: 'relative',
-    bottom: 17,
+    bottom: 2,
+    left: 1,
     color: 'white'
+  },
+  plusButton: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#424242',
+    width: width / 6,
+    height: height / 19,
+    borderTopRightRadius: 10,
+    borderBottomRightRadius: 10,
+    elevation: 5,
+    marginLeft: 1,
   },
   plus: {
-    fontSize: 40,
+    fontSize: 25,
     position: 'relative',
-    bottom: 9,
+    bottom: 1,
     color: 'white'
-  },
-  text: {
-    fontSize: 50
   },
   textContainer: {
     position: 'absolute',
@@ -96,15 +104,25 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
+  text: {
+    fontSize: 50,
+    color: 'white',
+    fontWeight: '100'
+  },
   iconContainer: {
     flex: 5,
+    alignItems: 'center',
+    justifyContent: 'center'
     // backgroundColor: 'orange',
-    alignItems: 'center'
+  },
+  labelContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    // backgroundColor: 'red'
   },
   label: {
-    color: 'grey',
-    position: 'relative',
-    top: 38,
+    color: 'white',
     fontSize: 20
   }
 });

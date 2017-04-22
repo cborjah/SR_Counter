@@ -42,7 +42,6 @@ class P1Combat extends Component {
           <TouchableHighlight style={styles.plusButton} underlayColor={'#9E9E9E'} onPress={() => this.props.addCombatP1()}>
             <Text style={styles.plus}>+</Text>
           </TouchableHighlight>
-
         </View>
 
       </View>

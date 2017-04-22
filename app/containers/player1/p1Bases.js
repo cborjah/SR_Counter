@@ -61,7 +61,6 @@ const styles = StyleSheet.create({
     // backgroundColor: 'white'
   },
   minusButton: {
-    // flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#424242',
@@ -80,7 +79,6 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   plusButton: {
-    // flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#424242',

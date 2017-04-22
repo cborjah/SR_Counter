@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
-// import { IndicatorViewPager } from 'rn-viewpager';
+import { View, Text, StyleSheet, TouchableHighlight, Dimensions } from 'react-native';
 
 import P2Authority from './p2Authority';
 import P2Trade from './p2Trade';
@@ -9,6 +8,8 @@ import P2Combat from './p2Combat';
 import ActionButton from '../actionButton';
 import P2Bases from './p2Bases';
 import P2History from './p2History';
+
+const { width, height } = Dimensions.get('window');
 
 class Player2 extends Component {
   constructor(props) {
@@ -39,6 +40,9 @@ class Player2 extends Component {
               setPage={() => {
                 this.props.changeTab();
             }}/>
+            <View style={styles.textContainer}>
+              <Text style={{color: '#6c6f73'}}>History</Text>
+            </View>
           </View>
 
         </View>
@@ -61,11 +65,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#424242',
     elevation: 5,
-  },
-  playerNameText: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: 'white',
   },
   playerStats: {
     flex: 15,
@@ -90,8 +89,13 @@ const styles = StyleSheet.create({
     // backgroundColor: '#757575',
   },
   fabContainer: {
-    height: 80,
+    height: height * 0.15,
     // backgroundColor: 'blue'
+  },
+  textContainer: {
+    // backgroundColor: 'white'
+    paddingLeft: (width * 0.1) / 5,
+    paddingBottom: (height * 0.1) / 10
   }
 });
 

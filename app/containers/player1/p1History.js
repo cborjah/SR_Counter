@@ -16,18 +16,16 @@ class P1History extends Component {
     });
   }
 
-  // Have each val stored as a text in a view. give view background color.
-
   render() {
     let _scrollView: ScrollView;
 
     return (
       <View style={{ flex: 1, borderStyle: 'solid', borderTopWidth: 0.5, borderTopColor: '#67696e' }}>
         <ScrollView
-          style={{backgroundColor: '#181d26'}}
+          style={{ backgroundColor: '#181d26' }}
           horizontal={true}
           ref={(scrollView) => { _scrollView = scrollView; }}
-          onContentSizeChange={() => _scrollView.scrollToEnd({animated: true})}
+          onContentSizeChange={() => _scrollView.scrollToEnd({ animated: true })}
         >
           {this.renderHistory()}
         </ScrollView>
