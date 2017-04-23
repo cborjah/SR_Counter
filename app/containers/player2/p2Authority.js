@@ -9,7 +9,6 @@ import { addAuthorityP2, minusAuthorityP2 } from '../../actions/player2';
 const { width, height } = Dimensions.get('window');
 
 class P2Authority extends Component {
-
   componentDidUpdate() {
     if(this.props.authority <= 0) {
       Actions.winScreen({ type: 'replace', winner: this.props.name1 });

@@ -22,6 +22,7 @@ class MainScreen extends Component {
           locked={true}
           ref={tabView => { this.tabView = tabView; }}
           onChangeTab={({i, ref}) => this.props.tabChanged(i)}
+          prerenderingSiblingsNumber={1}
         >
           <Player1 changeTab={() => this.tabView.goToPage(1)} tabLabel={this.props.name1} />
           <Player2 changeTab={() => this.tabView.goToPage(0)} tabLabel={this.props.name2} />
