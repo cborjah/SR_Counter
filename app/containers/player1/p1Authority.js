@@ -5,8 +5,7 @@ import Svg, { Path, G } from 'react-native-svg';
 import { Actions } from 'react-native-router-flux';
 
 import { addAuthorityP1, minusAuthorityP1 } from '../../actions/player1';
-
-const { width, height } = Dimensions.get('window');
+import Responsive from '../../global_styles/responsive';
 
 class P1Authority extends Component {
   componentDidUpdate() {
@@ -21,7 +20,7 @@ class P1Authority extends Component {
 
         <View style={styles.authority}>
           <View style={styles.iconContainer}>
-            <Svg width={126 * 1.2} height={128} viewBox="0 -5 126 75">
+            <Svg width={126 * Responsive.SVG_SCALE} height={128} viewBox="0 -5 126 75">
               <Path fill="#6BEF81" fill-rule="evenodd" d="M30.134 0H95.91v50.674L62.975 75 30.09 51.407 30.134 0zm69.538 0H126l-10.274 9.524H99.672V0zm0 12.698h14.104l-10.258 9.524h-3.846v-9.524zM0 0h26.328v9.524H10.274L0 0zm12.224 12.698h14.104v9.524h-3.847l-10.257-9.524z"/>
             </Svg>
           </View>
@@ -74,8 +73,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#424242',
-    width: width / 6,
-    height: height / 19,
+    width: Responsive.DEVICE_WIDTH / 6,
+    height: Responsive.DEVICE_HEIGHT / 19,
     borderTopLeftRadius: 10,
     borderBottomLeftRadius: 10,
     elevation: 5,
@@ -94,8 +93,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#424242',
-    width: width / 6,
-    height: height / 19,
+    width: Responsive.DEVICE_WIDTH / 6,
+    height: Responsive.DEVICE_HEIGHT / 19,
     borderTopRightRadius: 10,
     borderBottomRightRadius: 10,
     elevation: 5,
@@ -120,7 +119,7 @@ const styles = StyleSheet.create({
     // backgroundColor: 'orange'
   },
   text: {
-    fontSize: (Platform.OS === 'android') ? 50 : 45,
+    fontSize: (Platform.OS === 'android') ? Responsive.FONT_SIZE_LARGE : Responsive.FONT_SIZE_LARGE - 5,
     fontWeight: (Platform.OS === 'android') ? '900' : '700',
     color: 'black'
   },
@@ -138,7 +137,7 @@ const styles = StyleSheet.create({
   },
   label: {
     color: 'white',
-    fontSize: 20
+    fontSize: Responsive.FONT_SIZE_SMALL
   }
 });
 

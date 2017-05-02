@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, TextInput, TouchableHighlight, Dimensions } fro
 import { Actions } from 'react-native-router-flux';
 import { setNames } from '../actions/gameSetup';
 
-const { width, height } = Dimensions.get('window');
+import Responsive from '../global_styles/responsive';
 
 class GameSetup extends Component {
   constructor(props) {
@@ -27,29 +27,29 @@ class GameSetup extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.inputContainer}>
-          <View style={{ borderBottomWidth: 1, borderColor: '#40C4FF', marginBottom: (height * 0.1) / 2 }}>
+          <View style={{ borderBottomWidth: 1, borderColor: '#40C4FF', marginBottom: (Responsive.DEVICE_HEIGHT * 0.3) / 2, width: Responsive.DEVICE_WIDTH * 0.8 }}>
             <TextInput
-            style={{ height: 40, color: '#FFFFFF', opacity: this.state.isFocused1 ? 1 : 0.5 }}
+            style={{ height: (Responsive.DEVICE_HEIGHT * 0.15) / 2, color: '#FFFFFF', opacity: this.state.isFocused1 ? 1 : 0.5, fontSize: Responsive.FONT_SIZE }}
             onFocus={() => this.setState({ isFocused1: true })}
             onBlur={() => this.setState({ isFocused1: false })}
-            // style={[styles.textInput, { marginBottom: 15, opacity: this.state.isFocused1 ? 1 : 0.5 }]}
             placeholder='PLAYER 1'
             placeholderTextColor='#FFFFFF'
             autoCapitalize='characters'
             onChangeText={(text) => this.setState({input1: text})}
+            autoCorrect={false}
             />
           </View>
 
-          <View style={{ borderBottomWidth: 1, borderColor: '#40C4FF' }}>
+          <View style={{ borderBottomWidth: 1, borderColor: '#40C4FF', width: Responsive.DEVICE_WIDTH * 0.8 }}>
             <TextInput
-            style={{ height: 40, color: '#FFFFFF', opacity: this.state.isFocused2 ? 1 : 0.5 }}
+            style={{ height: (Responsive.DEVICE_HEIGHT * 0.15) / 2, color: '#FFFFFF', opacity: this.state.isFocused2 ? 1 : 0.5, fontSize: Responsive.FONT_SIZE }}
             onFocus={() => this.setState({ isFocused2: true })}
             onBlur={() => this.setState({ isFocused2: false })}
-            // style={[styles.textInput, { marginBottom: 15, opacity: this.state.isFocused1 ? 1 : 0.5 }]}
             placeholder='PLAYER 2'
             placeholderTextColor='#FFFFFF'
             autoCapitalize='characters'
             onChangeText={(text) => this.setState({input2: text})}
+            autoCorrect={false}
             />
           </View>
         </View>
@@ -73,13 +73,16 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     flex: 11,
-    alignSelf: 'stretch',
-    paddingLeft: 40,
-    paddingRight: 40,
-    paddingTop: 10,
-    paddingBottom: 10,
+    alignItems: 'center',
+
+    // alignSelf: 'stretch',
+    // paddingLeft: width * 0.1,
+    // paddingRight: width * 0.1,
+    // paddingTop: 10,
+    // paddingBottom: 10,
     justifyContent: 'center',
     // alignItems: 'center',
+    // backgroundColor: 'purple'
   },
   readyBtn: {
     flex: 1,
@@ -90,14 +93,15 @@ const styles = StyleSheet.create({
   readyBtnText: {
     color: 'white',
     fontWeight: '600', // Medium
-    fontSize: 20,
+    // fontSize: 20 * PixelRatio.getFontScale(),
+    fontSize: Responsive.FONT_SIZE,
     elevation: 2,
   },
-  textInput: {
-    color: '#FFFFFF',
-    fontSize: 30,
-    // textDecorationLine: 'none'
-  }
+  // textInput: {
+  //   color: '#FFFFFF',
+  //   fontSize: 30,
+  //   // textDecorationLine: 'none'
+  // }
 });
 
 export default connect(null, { setNames })(GameSetup);
