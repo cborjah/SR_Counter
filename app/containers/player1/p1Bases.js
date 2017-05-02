@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, TouchableHighlight, Dimensions, Platform } from
 import Svg, { Path, G } from 'react-native-svg';
 
 import { addDefenseP1, minusDefenseP1 } from '../../actions/player1';
+import Responsive from '../../global_styles/responsive';
 
 const { width, height } = Dimensions.get('window');
 
@@ -14,7 +15,7 @@ class P1Bases extends Component {
 
         <View style={styles.bases}>
           <View style={styles.iconContainer}>
-            <Svg width={82 * 1.1} height={82 * 1.1} viewBox="0 0 82 82">
+            <Svg width={82 * (Responsive.SVG_SCALE - 0.15)} height={82 * (Responsive.SVG_SCALE - 0.15)} viewBox="0 0 82 82">
               <Path fill="#000" fillRule="evenodd" stroke="#FFF" strokeLinecap="round" strokeLineJoin="round" strokeWidth="2" d="M81 1v16.444C81 70.284 41 81 41 81S1 70.284 1 17.444c0-4.151.14-11.412.236-16.05C5.12 7.723 12.516 11.997 21 11.997c8.658 0 16.183-4.452 20-10.997 3.817 6.545 11.342 10.997 20 10.997S77.183 7.545 81 1z"/>
             </Svg>
 
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
     marginRight: 1
   },
   minus: {
-    fontSize: 30,
+    fontSize: Responsive.FONT_SIZE + 5,
     position: 'relative',
     bottom: 2,
     left: 1,
@@ -91,7 +92,7 @@ const styles = StyleSheet.create({
     marginLeft: 1,
   },
   plus: {
-    fontSize: 25,
+    fontSize: Responsive.FONT_SIZE,
     position: 'relative',
     bottom: 1,
     color: 'white',
@@ -108,7 +109,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0)'
   },
   text: {
-    fontSize: (Platform.OS === 'android') ? 50 : 45,
+    fontSize: (Platform.OS === 'android') ? Responsive.FONT_SIZE_LARGE : Responsive.FONT_SIZE_LARGE - 5,
     fontWeight: (Platform.OS === 'android') ? '100' : '400',
     color: 'white',
     // justifyContent: 'center',
@@ -128,7 +129,7 @@ const styles = StyleSheet.create({
   },
   label: {
     color: 'white',
-    fontSize: 20,
+    fontSize: Responsive.FONT_SIZE_SMALL,
     // backgroundColor: 'blue'
   }
 });

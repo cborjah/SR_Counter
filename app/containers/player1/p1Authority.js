@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     marginRight: 1
   },
   minus: {
-    fontSize: 30,
+    fontSize: Responsive.FONT_SIZE + 5,
     position: 'relative',
     bottom: 2,
     left: 1,
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     marginLeft: 1,
   },
   plus: {
-    fontSize: 25,
+    fontSize: Responsive.FONT_SIZE,
     position: 'relative',
     bottom: 1,
     color: 'white',
