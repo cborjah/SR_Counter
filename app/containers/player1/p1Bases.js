@@ -6,9 +6,11 @@ import Svg, { Path, G } from 'react-native-svg';
 import { addDefenseP1, minusDefenseP1 } from '../../actions/player1';
 import Responsive from '../../global_styles/responsive';
 
-const { width, height } = Dimensions.get('window');
-
 class P1Bases extends Component {
+  componentDidMount() {
+    console.log(Responsive.DEVICE_WIDTH);
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -23,7 +25,6 @@ class P1Bases extends Component {
               <Text style={styles.text}>{this.props.defense}</Text>
             </View>
           </View>
-
         </View>
 
         <View style={styles.labelContainer}>
@@ -65,8 +66,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#424242',
-    width: width / 6,
-    height: height / 19,
+    width: Responsive.DEVICE_WIDTH / 6,
+    height: Responsive.DEVICE_HEIGHT / 19,
     borderTopLeftRadius: 10,
     borderBottomLeftRadius: 10,
     elevation: 5,
@@ -84,8 +85,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#424242',
-    width: width / 6,
-    height: height / 19,
+    width: Responsive.DEVICE_WIDTH / 6,
+    height: Responsive.DEVICE_HEIGHT / 19,
     borderTopRightRadius: 10,
     borderBottomRightRadius: 10,
     elevation: 5,

@@ -3,10 +3,10 @@ import React, { Dimensions } from 'react-native';
 const x = Dimensions.get('window').width;
 const y = Dimensions.get('window').height;
 
-const ratioX = x < 375 ? (x < 320 ? 0.75 : 0.875) : 1 ;
-const ratioY = y < 568 ? (y < 480 ? 0.75 : 0.875) : 1 ;
+const ratioX = x <= 375 ? (x <= 320 ? 0.75 : 0.875) : 1 ;
+const ratioY = y <= 568 ? (y <= 480 ? 0.75 : 0.875) : 1 ;
 
-const svgScaling = x < 375 ? (x < 320 ? 1 : 1.2) : 1.5;
+const svgScaling = x <= 375 ? (x <= 320 ? 1 : 1.3) : 1.5;
 
 const base_unit = 25;
 

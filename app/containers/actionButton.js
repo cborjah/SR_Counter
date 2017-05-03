@@ -5,7 +5,7 @@ import { Actions } from 'react-native-router-flux';
 import { p1Attacks } from '../actions/player1';
 import { p2Attacks } from '../actions/player2';
 
-const width = Dimensions.get('window').width;
+import Responsive from '../global_styles/responsive';
 
 class ActionButton extends Component {
   constructor(props) {
@@ -45,12 +45,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    fontSize: 18,
+    fontSize: Responsive.FONT_SIZE_SMALL,
     color: 'white'
   },
   button: {
     backgroundColor: '#EF5350',
-    width: width / 1.19,
+    width: Responsive.DEVICE_WIDTH / 1.19,
     alignItems: 'center',
     borderRadius: 2,
     elevation: 10,
