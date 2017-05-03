@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Platform } from 'react-native';
 import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
 
 import { tabChanged } from '../actions/tabs';
-
+import Responsive from '../global_styles/responsive';
 import Player1 from '../containers/player1/player1';
 import Player2 from '../containers/player2/player2';
 
@@ -13,7 +13,7 @@ class MainScreen extends Component {
     return (
       <View style={styles.container}>
         <ScrollableTabView
-          renderTabBar={() => <DefaultTabBar tabStyle={{ paddingBottom: 0, backgroundColor: '#070d18', height: 50 }} activeTextColor='white' inactiveTextColor='#444' />}
+          renderTabBar={() => <DefaultTabBar tabStyle={{ paddingBottom: 0, backgroundColor: '#070d18', height: 50 }} activeTextColor='white' inactiveTextColor='#444' textStyle={{ fontSize: Responsive.FONT_SIZE_SMALLER, ...Platform.select({ ios: { letterSpacing: 2, fontWeight: 'normal' } }) }} />}
           tabBarPosition='top'
           // style={this.props.activeTab ? { backgroundColor: '#212121', transform: [{ rotate: '180deg'}]} : { backgroundColor: '#212121' }}
           style={{ backgroundColor: '#070d18' }}
