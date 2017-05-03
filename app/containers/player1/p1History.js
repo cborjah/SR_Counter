@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     marginRight: 2,
   }
-})
+});
 
 function mapStateToProps(state) {
   return {

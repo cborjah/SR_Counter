@@ -9,7 +9,7 @@ import ActionButton from '../actionButton';
 import P1Bases from './p1Bases';
 import P1History from './p1History';
 
-const { width, height } = Dimensions.get('window');
+import Responsive from '../../global_styles/responsive';
 
 class Player1 extends Component {
   constructor(props) {
@@ -91,13 +91,13 @@ const styles = StyleSheet.create({
     // backgroundColor: '#757575',
   },
   fabContainer: {
-    height: height * 0.15,
+    height: Responsive.DEVICE_HEIGHT * 0.15,
     // backgroundColor: 'blue'
   },
   textContainer: {
     // backgroundColor: 'white'
-    paddingLeft: (width * 0.1) / 5,
-    paddingBottom: (height * 0.1) / 10
+    paddingLeft: (Responsive.DEVICE_WIDTH * 0.1) / 5,
+    paddingBottom: (Responsive.DEVICE_HEIGHT * 0.1) / 10
   }
 });
 

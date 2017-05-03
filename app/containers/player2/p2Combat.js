@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, TouchableHighlight, Dimensions, Platform } from
 import { minusCombatP2, addCombatP2 } from '../../actions/player2';
 import Svg, { Path, Rect, G } from 'react-native-svg';
 
-const {width, height} = Dimensions.get('window');
+import Responsive from '../../global_styles/responsive';
 
 class P2Combat extends Component {
   render() {
@@ -13,7 +13,7 @@ class P2Combat extends Component {
 
         <View style={styles.combat}>
           <View style={styles.iconContainer}>
-            <Svg width={85 * 1.2} height={85 * 1.2} viewBox="0 0 85 85">
+            <Svg width={85 * Responsive.SVG_SCALE} height={85 * Responsive.SVG_SCALE} viewBox="0 0 85 85">
               <G fill="#D34314" fill-rule="evenodd">
                   <Path d="M41.897 72.943c16.647 0 30.142-13.495 30.142-30.142 0-16.646-13.495-30.141-30.142-30.141S11.755 26.155 11.755 42.8c0 16.647 13.495 30.142 30.142 30.142z"/>
                   <Path d="M41.897 79.725c-20.392 0-36.924-16.531-36.924-36.924 0-20.392 16.532-36.923 36.924-36.923 20.393 0 36.924 16.531 36.924 36.923 0 20.393-16.531 36.924-36.924 36.924zm0-3.165c18.645 0 33.759-15.114 33.759-33.759 0-18.644-15.114-33.758-33.759-33.758-18.644 0-33.759 15.114-33.759 33.758 0 18.645 15.115 33.76 33.76 33.76z"/>
@@ -70,16 +70,16 @@ const styles = StyleSheet.create({
     // flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#424242',
-    width: width / 6,
-    height: height / 19,
+    backgroundColor: '#172a4c',
+    width: Responsive.DEVICE_WIDTH / 6,
+    height: Responsive.DEVICE_HEIGHT / 19,
     borderTopLeftRadius: 10,
     borderBottomLeftRadius: 10,
     elevation: 5,
     marginRight: 1
   },
   minus: {
-    fontSize: 30,
+    fontSize: Responsive.FONT_SIZE + 5,
     position: 'relative',
     bottom: 2,
     left: 1,
@@ -90,16 +90,16 @@ const styles = StyleSheet.create({
     // flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#424242',
-    width: width / 6,
-    height: height / 19,
+    backgroundColor: '#172a4c',
+    width: Responsive.DEVICE_WIDTH / 6,
+    height: Responsive.DEVICE_HEIGHT / 19,
     borderTopRightRadius: 10,
     borderBottomRightRadius: 10,
     elevation: 5,
     marginLeft: 1,
   },
   plus: {
-    fontSize: 25,
+    fontSize: Responsive.FONT_SIZE,
     position: 'relative',
     bottom: 1,
     color: 'white',
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     left: 0,
-    right: 1,
+    right: 0,
     bottom: 0,
     justifyContent: 'center',
     alignItems: 'center',
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     // backgroundColor: 'grey'
   },
   text: {
-    fontSize: (Platform.OS === 'android') ? 50 : 45,
+    fontSize: (Platform.OS === 'android') ? Responsive.FONT_SIZE_LARGER : Responsive.FONT_SIZE_LARGER - 5,
     fontWeight: (Platform.OS === 'android') ? '900' : '700',
     color: 'black'
   },
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
   },
   label: {
     color: 'white',
-    fontSize: 20
+    fontSize: Responsive.FONT_SIZE_SMALL
   }
 });
 

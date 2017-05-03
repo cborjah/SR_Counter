@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, Button, TouchableHighlight, Dimensions, Platfor
 import { minusTradeP2, addTradeP2 } from '../../actions/player2';
 import Svg, { Path } from 'react-native-svg';
 
-const { width, height } = Dimensions.get('window');
+import Responsive from '../../global_styles/responsive';
 
 class P2Trade extends Component {
   render() {
@@ -13,7 +13,7 @@ class P2Trade extends Component {
 
         <View style={styles.trade}>
           <View style={styles.iconContainer}>
-            <Svg width={75 * 1.2} height={75 * 1.2} viewBox="0 0 75 75">
+            <Svg width={75 * Responsive.SVG_SCALE} height={75 * Responsive.SVG_SCALE} viewBox="0 0 75 75">
               <Path fill="#F4D719" fill-rule="evenodd" d="M37.5 75C58.21 75 75 58.21 75 37.5S58.21 0 37.5 0 0 16.79 0 37.5 16.79 75 37.5 75z"/>
             </Svg>
           </View>
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0)'
   },
   text: {
-    fontSize: (Platform.OS === 'android') ? 50 : 45,
+    fontSize: (Platform.OS === 'android') ? Responsive.FONT_SIZE_LARGER : Responsive.FONT_SIZE_LARGER - 5,
     fontWeight: (Platform.OS === 'android') ? '900' : '700',
     color: 'black'
   },
@@ -77,16 +77,16 @@ const styles = StyleSheet.create({
     // flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#424242',
-    width: width / 6,
-    height: height / 19,
+    backgroundColor: '#172a4c',
+    width: Responsive.DEVICE_WIDTH / 6,
+    height: Responsive.DEVICE_HEIGHT / 19,
     borderTopLeftRadius: 10,
     borderBottomLeftRadius: 10,
     elevation: 5,
     marginRight: 1
   },
   minus: {
-    fontSize: 30,
+    fontSize: Responsive.FONT_SIZE + 5,
     position: 'relative',
     bottom: 2,
     left: 1,
@@ -97,16 +97,16 @@ const styles = StyleSheet.create({
     // flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#424242',
-    width: width / 6,
-    height: height / 19,
+    backgroundColor: '#172a4c',
+    width: Responsive.DEVICE_WIDTH / 6,
+    height: Responsive.DEVICE_HEIGHT / 19,
     borderTopRightRadius: 10,
     borderBottomRightRadius: 10,
     elevation: 5,
     marginLeft: 1,
   },
   plus: {
-    fontSize: 25,
+    fontSize: Responsive.FONT_SIZE,
     position: 'relative',
     bottom: 1,
     color: 'white',
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
   },
   label: {
     color: 'white',
-    fontSize: 20
+    fontSize: Responsive.FONT_SIZE_SMALL
   }
 });
 

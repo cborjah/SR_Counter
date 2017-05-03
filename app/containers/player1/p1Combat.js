@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#172a4c',
     width: Responsive.DEVICE_WIDTH / 6,
-    height: Responsive.DEVICE_HEIGHT/ 19,
+    height: Responsive.DEVICE_HEIGHT / 19,
     borderTopLeftRadius: 10,
     borderBottomLeftRadius: 10,
     elevation: 5,

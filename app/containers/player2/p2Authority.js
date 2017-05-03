@@ -5,8 +5,7 @@ import Svg, { Path, G } from 'react-native-svg';
 import { Actions } from 'react-native-router-flux';
 
 import { addAuthorityP2, minusAuthorityP2 } from '../../actions/player2';
-
-const { width, height } = Dimensions.get('window');
+import Responsive from '../../global_styles/responsive';
 
 class P2Authority extends Component {
   componentDidUpdate() {
@@ -21,7 +20,7 @@ class P2Authority extends Component {
 
         <View style={styles.authority}>
           <View style={styles.iconContainer}>
-            <Svg width={126 * 1.2} height={128} viewBox="0 -5 126 75">
+            <Svg width={126 * Responsive.SVG_SCALE} height={128 * Responsive.SVG_SCALE} viewBox="0 -5 126 75">
               <Path fill="#6BEF81" fill-rule="evenodd" d="M30.134 0H95.91v50.674L62.975 75 30.09 51.407 30.134 0zm69.538 0H126l-10.274 9.524H99.672V0zm0 12.698h14.104l-10.258 9.524h-3.846v-9.524zM0 0h26.328v9.524H10.274L0 0zm12.224 12.698h14.104v9.524h-3.847l-10.257-9.524z"/>
             </Svg>
           </View>
@@ -72,16 +71,16 @@ const styles = StyleSheet.create({
     // flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#424242',
-    width: width / 6,
-    height: height / 19,
+    backgroundColor: '#172a4c',
+    width: Responsive.DEVICE_WIDTH / 6,
+    height: Responsive.DEVICE_HEIGHT / 19,
     borderTopLeftRadius: 10,
     borderBottomLeftRadius: 10,
     elevation: 5,
     marginRight: 1
   },
   minus: {
-    fontSize: 30,
+    fontSize: Responsive.FONT_SIZE + 5,
     position: 'relative',
     bottom: 2,
     left: 1,
@@ -92,16 +91,16 @@ const styles = StyleSheet.create({
     // flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#424242',
-    width: width / 6,
-    height: height / 19,
+    backgroundColor: '#172a4c',
+    width: Responsive.DEVICE_WIDTH / 6,
+    height: Responsive.DEVICE_HEIGHT / 19,
     borderTopRightRadius: 10,
     borderBottomRightRadius: 10,
     elevation: 5,
     marginLeft: 1,
   },
   plus: {
-    fontSize: 25,
+    fontSize: Responsive.FONT_SIZE,
     position: 'relative',
     bottom: 1,
     color: 'white',
@@ -117,8 +116,8 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   text: {
-    fontSize: (Platform.OS === 'android') ? 50 : 45,
-    fontWeight: (Platform.OS === 'android') ? '900' : '700',
+    fontSize: (Platform.OS === 'android') ? Responsive.FONT_SIZE_LARGER : Responsive.FONT_SIZE_LARGER - 5,
+    fontWeight: (Platform.OS === 'android') ? '900' : '800',
     color: 'black',
     backgroundColor: 'rgba(0,0,0,0)'
   },
@@ -136,7 +135,7 @@ const styles = StyleSheet.create({
   },
   label: {
     color: 'white',
-    fontSize: 20
+    fontSize: Responsive.FONT_SIZE_SMALL
   }
 });
 

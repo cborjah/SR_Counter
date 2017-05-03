@@ -8,8 +8,7 @@ import P2Combat from './p2Combat';
 import ActionButton from '../actionButton';
 import P2Bases from './p2Bases';
 import P2History from './p2History';
-
-const { width, height } = Dimensions.get('window');
+import Responsive from '../../global_styles/responsive';
 
 class Player2 extends Component {
   constructor(props) {
@@ -62,7 +61,7 @@ const styles = StyleSheet.create({
     // backgroundColor: '#E0E0E0',
   },
   history: {
-    flex: 1,
+    height: (Responsive.DEVICE_HEIGHT * 0.15) / 2,
     backgroundColor: '#424242',
     elevation: 5,
   },
@@ -89,13 +88,13 @@ const styles = StyleSheet.create({
     // backgroundColor: '#757575',
   },
   fabContainer: {
-    height: height * 0.15,
+    height: Responsive.DEVICE_HEIGHT * 0.15,
     // backgroundColor: 'blue'
   },
   textContainer: {
     // backgroundColor: 'white'
-    paddingLeft: (width * 0.1) / 5,
-    paddingBottom: (height * 0.1) / 10
+    paddingLeft: (Responsive.DEVICE_WIDTH * 0.1) / 5,
+    paddingBottom: (Responsive.DEVICE_HEIGHT * 0.1) / 10
   }
 });
 
