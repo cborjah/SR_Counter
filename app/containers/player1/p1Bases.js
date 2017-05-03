@@ -17,7 +17,7 @@ class P1Bases extends Component {
 
         <View style={styles.bases}>
           <View style={styles.iconContainer}>
-            <Svg width={82 * (Responsive.SVG_SCALE - 0.15)} height={82 * (Responsive.SVG_SCALE - 0.15)} viewBox="0 0 82 82">
+            <Svg width={82 * (Responsive.SVG_SCALE - 0.1)} height={82 * (Responsive.SVG_SCALE - 0.1)} viewBox="0 0 82 82">
               <Path fill="#000" fillRule="evenodd" stroke="#FFF" strokeLinecap="round" strokeLineJoin="round" strokeWidth="2" d="M81 1v16.444C81 70.284 41 81 41 81S1 70.284 1 17.444c0-4.151.14-11.412.236-16.05C5.12 7.723 12.516 11.997 21 11.997c8.658 0 16.183-4.452 20-10.997 3.817 6.545 11.342 10.997 20 10.997S77.183 7.545 81 1z"/>
             </Svg>
 
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   minusButton: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#424242',
+    backgroundColor: '#172a4c',
     width: Responsive.DEVICE_WIDTH / 6,
     height: Responsive.DEVICE_HEIGHT / 19,
     borderTopLeftRadius: 10,
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   plusButton: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#424242',
+    backgroundColor: '#172a4c',
     width: Responsive.DEVICE_WIDTH / 6,
     height: Responsive.DEVICE_HEIGHT / 19,
     borderTopRightRadius: 10,
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0)'
   },
   text: {
-    fontSize: (Platform.OS === 'android') ? Responsive.FONT_SIZE_LARGE : Responsive.FONT_SIZE_LARGE - 5,
+    fontSize: (Platform.OS === 'android') ? Responsive.FONT_SIZE_LARGER : Responsive.FONT_SIZE_LARGER - 5,
     fontWeight: (Platform.OS === 'android') ? '100' : '400',
     color: 'white',
     // justifyContent: 'center',

@@ -63,7 +63,8 @@ const styles = StyleSheet.create({
     // backgroundColor: '#E0E0E0',
   },
   history: {
-    flex: 1,
+    // flex: 1,
+    height: (Responsive.DEVICE_HEIGHT * 0.15) / 2,
     backgroundColor: '#424242',
     elevation: 5,
   },

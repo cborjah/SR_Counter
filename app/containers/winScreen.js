@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, StyleSheet, TouchableHighlight, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight, Dimensions, StatusBar } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { newGame } from '../actions/newGame';
 
-const window = Dimensions.get('window');
+import Responsive from '../global_styles/responsive';
 
 class WinScreen extends Component {
   constructor(props) {
@@ -19,6 +19,7 @@ class WinScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <StatusBar hidden />
         <View style={styles.winMessage}>
           <Text style={styles.text}>{this.props.winner} Wins!</Text>
         </View>
@@ -39,41 +40,42 @@ class WinScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: '#424242',
+    backgroundColor: '#070d18',
     alignItems: 'center',
     justifyContent: 'space-around',
   },
   winMessage: {
     flex: 1,
-    backgroundColor: '#424242',
+    // backgroundColor: '#424242',
     alignSelf: 'stretch',
     alignItems: 'center',
     justifyContent: 'flex-end',
     // paddingBottom: 10
   },
   text: {
-    fontSize: 50,
+    fontSize: Responsive.FONT_SIZE_LARGER,
     color: '#FFFFFF',
   },
   newGame: {
     flex: 1,
-    backgroundColor: '#424242',
-    alignSelf: 'stretch',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    paddingTop: 40,
+    paddingTop: (Responsive.DEVICE_HEIGHT * 0.1) / 2,
+    // backgroundColor: '#424242',
   },
   buttonText: {
-    fontSize: 25,
+    fontSize: Responsive.FONT_SIZE_TITLE,
     textAlign: 'center',
     color: '#FFFFFF',
     fontWeight: "600" // Medium
   },
   button: {
     backgroundColor: '#0091EA',
-    borderRadius: 5,
-    width: window.width / 2,
+    // borderWidth: 1,
+    width: Responsive.DEVICE_WIDTH * 0.8,
+    height: (Responsive.DEVICE_HEIGHT * 0.2) / 3,
+    borderRadius: 2,
     elevation: 2,
+    alignItems: 'center',
+    justifyContent: 'center'
     // paddingLeft: 10,
     // paddingRight: 10
   }

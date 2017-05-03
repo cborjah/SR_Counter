@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, StyleSheet, TouchableHighlight, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight, Dimensions, Platform } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { p1Attacks } from '../actions/player1';
 import { p2Attacks } from '../actions/player2';
@@ -43,19 +43,25 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    // backgroundColor: 'grey'
   },
   text: {
-    fontSize: Responsive.FONT_SIZE_SMALL,
+    fontSize: Responsive.FONT_SIZE_SMALLER,
+    ...Platform.select({ ios: { letterSpacing: 2.75 } }),
+    // fontFamily: 'Roboto',
+    fontWeight: '600',
     color: 'white'
   },
   button: {
-    backgroundColor: '#EF5350',
+    backgroundColor: '#d34414',
     width: Responsive.DEVICE_WIDTH / 1.19,
     alignItems: 'center',
+    justifyContent: 'center',
     borderRadius: 2,
     elevation: 10,
-    paddingTop: 9,
-    paddingBottom: 9
+    // paddingTop: 9,
+    // paddingBottom: 9,
+    height: (Responsive.DEVICE_HEIGHT * 0.2) / 3
   }
 });
 

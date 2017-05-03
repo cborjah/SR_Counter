@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     // flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#424242',
+    backgroundColor: '#172a4c',
     width: Responsive.DEVICE_WIDTH / 6,
     height: Responsive.DEVICE_HEIGHT / 19,
     borderTopLeftRadius: 10,
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     // flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#424242',
+    backgroundColor: '#172a4c',
     width: Responsive.DEVICE_WIDTH / 6,
     height: Responsive.DEVICE_HEIGHT / 19,
     borderTopRightRadius: 10,
@@ -119,8 +119,8 @@ const styles = StyleSheet.create({
     // backgroundColor: 'orange'
   },
   text: {
-    fontSize: (Platform.OS === 'android') ? Responsive.FONT_SIZE_LARGE : Responsive.FONT_SIZE_LARGE - 5,
-    fontWeight: (Platform.OS === 'android') ? '900' : '700',
+    fontSize: (Platform.OS === 'android') ? Responsive.FONT_SIZE_LARGER : Responsive.FONT_SIZE_LARGER - 5,
+    fontWeight: (Platform.OS === 'android') ? '900' : '800',
     color: 'black'
   },
   iconContainer: {

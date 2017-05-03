@@ -31,7 +31,7 @@ export default function(state = INITIAL_STATE, action) {
           lastItem.val += 1;
           return { ...state, trade: state.trade - 1, history: updatedHistory };
         } else {
-          updatedHistory.push({ val: 1, operator: '-', type: 'trade', color: "#FFEE58" });
+          updatedHistory.push({ val: 1, operator: '-', type: 'trade', backgroundColor: "#f4d719" });
           return { ...state, trade: state.trade - 1, history: updatedHistory };
         }
       } else {
@@ -45,7 +45,7 @@ export default function(state = INITIAL_STATE, action) {
         }
         return state;
       } else {
-        updatedHistory.push({ val: 1, operator: '+', type: 'trade', color: "#FFEE58" });
+        updatedHistory.push({ val: 1, operator: '+', type: 'trade', backgroundColor: "#f4d719" });
         return { ...state, trade: state.trade + 1, history: updatedHistory };
       }
       // return { ...state, trade: state.trade + 1 }
@@ -55,7 +55,7 @@ export default function(state = INITIAL_STATE, action) {
           lastItem.val += 1;
           return { ...state, combat: state.combat - 1, history: updatedHistory };
         } else {
-          updatedHistory.push({ val: 1, operator: '-', type: 'combat', color: "#EF5350" });
+          updatedHistory.push({ val: 1, operator: '-', type: 'combat', backgroundColor: "#d34314" });
           return { ...state, combat: state.combat - 1, history: updatedHistory };
         }
       } else {
@@ -69,7 +69,7 @@ export default function(state = INITIAL_STATE, action) {
         }
         return state;
       } else {
-        updatedHistory.push({ val: 1, operator: '+', type: 'combat', color: "#EF5350" });
+        updatedHistory.push({ val: 1, operator: '+', type: 'combat', backgroundColor: "#d34314" });
         return { ...state, combat: state.combat + 1, history: updatedHistory };
       }
     case MINUS_AUTHORITY_P1: {
@@ -77,7 +77,7 @@ export default function(state = INITIAL_STATE, action) {
         lastItem.val += 1;
         return { ...state, authority: state.authority - 1, history: updatedHistory };
       } else {
-        updatedHistory.push({ val: 1, operator: '-', type: 'authority', color: "#69F0AE" });
+        updatedHistory.push({ val: 1, operator: '-', type: 'authority', backgroundColor: "#6bef81" });
         return { ...state, authority: state.authority - 1, history: updatedHistory };
       }
     }
@@ -89,7 +89,7 @@ export default function(state = INITIAL_STATE, action) {
         }
         return state;
       } else {
-        updatedHistory.push({ val: 1, operator: '+', type: 'authority', color: "#69F0AE" });
+        updatedHistory.push({ val: 1, operator: '+', type: 'authority', backgroundColor: "#6bef81" });
         return { ...state, authority: state.authority + 1, history: updatedHistory };
       }
     }
@@ -99,7 +99,7 @@ export default function(state = INITIAL_STATE, action) {
           lastItem.val += 1;
           return { ...state, defense: state.defense - 1, history: updatedHistory };
         } else {
-          updatedHistory.push({ val: 1, operator: '-', type: 'defense', color: "#D8D8D8" });
+          updatedHistory.push({ val: 1, operator: '-', type: 'defense', backgroundColor: "#070d18", color: '#FFF', borderWidth: 1, borderColor: '#FFF' });
           return { ...state, defense: state.defense - 1, history: updatedHistory };
         }
       } else {
@@ -114,7 +114,7 @@ export default function(state = INITIAL_STATE, action) {
         }
         return state;
       } else {
-        updatedHistory.push({ val: 1, operator: '+', type: 'defense', color: "#D8D8D8" });
+        updatedHistory.push({ val: 1, operator: '+', type: 'defense', backgroundColor: "#070d18", color: '#FFF', borderWidth: 1, borderColor: '#FFF' });
         return { ...state, defense: state.defense + 1, history: updatedHistory };
       }
     }

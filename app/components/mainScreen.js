@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, StyleSheet, Platform } from 'react-native';
+import { View, StyleSheet, Platform, StatusBar } from 'react-native';
 import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
 
 import { tabChanged } from '../actions/tabs';
@@ -12,8 +12,9 @@ class MainScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <StatusBar hidden />
         <ScrollableTabView
-          renderTabBar={() => <DefaultTabBar style={{ borderWidth: 0 }} tabStyle={{ paddingBottom: 0, backgroundColor: '#070d18', height: 50 }} activeTextColor='white' inactiveTextColor='#444' textStyle={{ fontSize: Responsive.FONT_SIZE_SMALLER, ...Platform.select({ ios: { letterSpacing: 2, fontWeight: 'normal' } }) }} />}
+          renderTabBar={() => <DefaultTabBar style={{ borderWidth: 0, height: (Responsive.DEVICE_HEIGHT * 0.15) / 2 }} tabStyle={{ paddingBottom: 0, backgroundColor: '#070d18', height: 50 }} activeTextColor='white' inactiveTextColor='#444' textStyle={{ fontSize: Responsive.FONT_SIZE_SMALLER, ...Platform.select({ ios: { letterSpacing: 2.75, fontWeight: '700' } }) }} />}
           tabBarPosition='top'
           // style={this.props.activeTab ? { backgroundColor: '#212121', transform: [{ rotate: '180deg'}]} : { backgroundColor: '#212121' }}
           style={{ backgroundColor: '#070d18' }}

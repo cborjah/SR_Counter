@@ -32,12 +32,6 @@ export default class App extends Component {
               hideNavBar={true}
             />
 
-            {/* <Scene
-              key="p1Trade"
-              component={P1Trade}
-              hideNavBar={true}
-            /> */}
-
             <Scene
               key="winScreen"
               component={WinScreen}

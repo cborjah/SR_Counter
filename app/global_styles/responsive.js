@@ -6,7 +6,7 @@ const y = Dimensions.get('window').height;
 const ratioX = x <= 375 ? (x <= 320 ? 0.75 : 0.875) : 1 ;
 const ratioY = y <= 568 ? (y <= 480 ? 0.75 : 0.875) : 1 ;
 
-const svgScaling = x <= 375 ? (x <= 320 ? 1 : 1.3) : 1.5;
+const svgScaling = x <= 375 ? (x <= 320 ? 1 : 1.2) : 1.5;
 
 const base_unit = 25;
 
@@ -37,7 +37,8 @@ export default Responsive = {
   FONT_SIZE_SMALLER: em(0.75),
   FONT_SIZE_SMALL: em(0.875),
   FONT_SIZE_TITLE: em(1.25),
-  FONT_SIZE_LARGE: em(2.5),
+  FONT_SIZE_LARGER: em(2.25),
+  FONT_SIZE_LARGE: em(1.75),
 
   // SVG
   SVG_SCALE: svgScaling,
