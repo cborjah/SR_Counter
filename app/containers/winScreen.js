@@ -7,10 +7,6 @@ import { newGame } from '../actions/newGame';
 import Responsive from '../global_styles/responsive';
 
 class WinScreen extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   handleNewGame() {
     this.props.newGame();
     Actions.gameSetup({ type: 'replace' });
@@ -42,24 +38,22 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#070d18',
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'space-around'
   },
   winMessage: {
     flex: 1,
     // backgroundColor: '#424242',
     alignSelf: 'stretch',
     alignItems: 'center',
-    justifyContent: 'flex-end',
-    // paddingBottom: 10
+    justifyContent: 'flex-end'
   },
   text: {
     fontSize: Responsive.FONT_SIZE_LARGER,
-    color: '#FFFFFF',
+    color: '#FFFFFF'
   },
   newGame: {
     flex: 1,
-    paddingTop: (Responsive.DEVICE_HEIGHT * 0.1) / 2,
-    // backgroundColor: '#424242',
+    paddingTop: (Responsive.DEVICE_HEIGHT * 0.1) / 2
   },
   buttonText: {
     fontSize: Responsive.FONT_SIZE_TITLE,
@@ -69,15 +63,12 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: '#0091EA',
-    // borderWidth: 1,
     width: Responsive.DEVICE_WIDTH * 0.8,
     height: (Responsive.DEVICE_HEIGHT * 0.2) / 3,
     borderRadius: 2,
     elevation: 2,
     alignItems: 'center',
     justifyContent: 'center'
-    // paddingLeft: 10,
-    // paddingRight: 10
   }
 });
 
