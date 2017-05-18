@@ -3,13 +3,13 @@ import React, { Dimensions } from 'react-native';
 const x = Dimensions.get('window').width;
 const y = Dimensions.get('window').height;
 
+// First iteration of ratios
 // const ratioX = x <= 375 ? (x <= 320 ? 0.75 : 0.875) : 1 ;
 // const ratioY = y <= 568 ? (y <= 480 ? 0.75 : 0.875) : 1 ;
-
-const ratioX = x <= 768 ? (x <= 414 ? (x <= 375 ? (x <= 320 ? 0.75 : 0.875) : 1) : 1.5) : 2 ;
-const ratioY = y <= 568 ? (y <= 480 ? 0.75 : 0.875) : 1 ;
-
 // const svgScaling = x <= 375 ? (x <= 320 ? 1 : 1.2) : 1.5;
+
+const ratioX = x <= 768 ? (x <= 414 ? (x <= 375 ? (x <= 320 ? 0.75 : 0.875) : 1) : 1.5) : 2;
+const ratioY = y <= 568 ? (y <= 480 ? 0.75 : 0.875) : 1;
 const svgScaling = x <= 768 ? (x <= 414 ? (x <= 375 ? (x <= 320 ? 1 : 1.15) : 1.25) : 2) : 3;
 
 const base_unit = 25;
@@ -21,7 +21,6 @@ function em(value) {
 }
 
 export default Responsive = {
-
   // GENERAL
   DEVICE_WIDTH: x,
   DEVICE_HEIGHT: y,
@@ -46,5 +45,4 @@ export default Responsive = {
 
   // SVG
   SVG_SCALE: svgScaling,
-
 };
