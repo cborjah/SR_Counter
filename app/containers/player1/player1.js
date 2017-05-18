@@ -8,7 +8,6 @@ import P1Combat from './p1Combat';
 import ActionButton from '../actionButton';
 import P1Bases from './p1Bases';
 import P1History from './p1History';
-
 import Responsive from '../../global_styles/responsive';
 
 class Player1 extends Component {
@@ -41,7 +40,7 @@ class Player1 extends Component {
                 this.props.changeTab();
             }}/>
             <View style={styles.textContainer}>
-              <Text style={{color: '#6c6f73'}}>History</Text>
+              <Text style={{ color: '#6c6f73', fontSize: Responsive.FONT_SIZE_SMALLER }}>History</Text>
             </View>
           </View>
 
@@ -64,7 +63,7 @@ const styles = StyleSheet.create({
   },
   history: {
     // flex: 1,
-    height: (Responsive.DEVICE_HEIGHT * 0.15) / 2,
+    height: Responsive.DEVICE_WIDTH * 0.1,
     backgroundColor: '#424242',
     elevation: 5,
   },
@@ -81,9 +80,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     // backgroundColor: '#4DB6AC',
-  },
-  statsText: {
-    fontSize: 50,
   },
   authority: {
     flex: 1,

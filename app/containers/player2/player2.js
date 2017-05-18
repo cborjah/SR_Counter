@@ -40,7 +40,7 @@ class Player2 extends Component {
                 this.props.changeTab();
             }}/>
             <View style={styles.textContainer}>
-              <Text style={{color: '#6c6f73'}}>History</Text>
+              <Text style={{ color: '#6c6f73', fontSize: Responsive.FONT_SIZE_SMALLER }}>History</Text>
             </View>
           </View>
 
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     // backgroundColor: '#E0E0E0',
   },
   history: {
-    height: (Responsive.DEVICE_HEIGHT * 0.15) / 2,
+    height: Responsive.DEVICE_WIDTH * 0.1,
     backgroundColor: '#424242',
     elevation: 5,
   },
