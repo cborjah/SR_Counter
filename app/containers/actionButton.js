@@ -8,10 +8,6 @@ import { p2Attacks } from '../actions/player2';
 import Responsive from '../global_styles/responsive';
 
 class ActionButton extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   handleAttack() {
     if(this.props.p1) {
       this.props.p1Attacks(this.props.combatPoints);
@@ -29,8 +25,7 @@ class ActionButton extends Component {
           style={styles.button}
           onPress={() => this.handleAttack()}
           underlayColor='#E57373'
-          activeOpacity={0.9}
-        >
+          activeOpacity={0.9}>
           <Text style={styles.text}>{this.props.combatPoints ? "ATTACK" : "END TURN"}</Text>
         </TouchableHighlight>
       </View>
@@ -42,13 +37,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    // backgroundColor: 'grey'
+    alignItems: 'center'
   },
   text: {
     fontSize: Responsive.FONT_SIZE_SMALLER,
     ...Platform.select({ ios: { letterSpacing: 2.75 } }),
-    // fontFamily: 'Roboto',
     fontWeight: '600',
     color: 'white'
   },
@@ -59,8 +52,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 2,
     elevation: 10,
-    // paddingTop: 9,
-    // paddingBottom: 9,
     height: (Responsive.DEVICE_HEIGHT * 0.2) / 3
   }
 });

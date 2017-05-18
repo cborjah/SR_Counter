@@ -6,7 +6,7 @@ import { View, Text } from 'react-native';
 
 import reducers from './reducers';
 import GameSetup from './containers/gameSetup';
-import MainScreen from './components/mainScreen';
+import MainScreen from './containers/mainScreen';
 import P1Trade from './containers/player1/p1Trade';
 import WinScreen from './containers/winScreen';
 
