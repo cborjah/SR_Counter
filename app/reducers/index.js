@@ -7,8 +7,7 @@ import Tabs from './reducer_tabs';
 const rootReducer = combineReducers({
   playerNames: GameSetupReducer,
   player1Stats: Player1Stats,
-  player2Stats: Player2Stats,
-  tabs: Tabs
+  player2Stats: Player2Stats
 });
 
 export default rootReducer;

@@ -1,7 +1,6 @@
 // General
 export const SET_NAMES = "SET_NAMES";
 export const NEW_GAME = "NEW_GAME";
-export const TAB_CHANGED = "TAB_CHANGED";
 
 // Player 1
 export const MINUS_TRADE_P1 = "MINUS_TRADE_P1";

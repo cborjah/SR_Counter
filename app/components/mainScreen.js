@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { View, StyleSheet, Platform, StatusBar } from 'react-native';
 import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
 
-import { tabChanged } from '../actions/tabs';
 import Responsive from '../global_styles/responsive';
 import Player1 from '../containers/player1/player1';
 import Player2 from '../containers/player2/player2';
@@ -20,7 +19,6 @@ class MainScreen extends Component {
           tabBarUnderlineStyle={{ backgroundColor: 'white', height: 1 }}
           locked={true}
           ref={tabView => { this.tabView = tabView; }}
-          onChangeTab={({i, ref}) => this.props.tabChanged(i)}
           prerenderingSiblingsNumber={1}>
           <Player1 changeTab={() => this.tabView.goToPage(1)} tabLabel={this.props.name1} />
           <Player2 changeTab={() => this.tabView.goToPage(0)} tabLabel={this.props.name2} />
@@ -40,7 +38,7 @@ const styles = StyleSheet.create({
   },
   tab: {
     paddingBottom: 0,
-    backgroundColor: '#070d18',
+    backgroundColor: '#070d18'
   },
   tabText: {
     fontSize: Responsive.FONT_SIZE_SMALLER,
@@ -51,9 +49,8 @@ const styles = StyleSheet.create({
 function mapStateToProps(state) {
   return {
     name1: state.playerNames.name1,
-    name2: state.playerNames.name2,
-    activeTab: state.tabs.activeTab
+    name2: state.playerNames.name2
   };
 }
 
-export default connect(mapStateToProps, { tabChanged })(MainScreen);
+export default connect(mapStateToProps, null)(MainScreen);
