@@ -5,10 +5,9 @@ import { Router, Scene } from 'react-native-router-flux';
 import { View, Text } from 'react-native';
 
 import reducers from './reducers';
-import GameSetup from './containers/gameSetup';
-import MainScreen from './containers/mainScreen';
-import P1Trade from './containers/player1/p1Trade';
-import WinScreen from './containers/winScreen';
+import GameSetup from './components/gameSetup';
+import MainScreen from './components/mainScreen';
+import WinScreen from './components/winScreen';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 

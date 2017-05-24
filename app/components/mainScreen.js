@@ -4,8 +4,8 @@ import { View, StyleSheet, Platform, StatusBar } from 'react-native';
 import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
 
 import Responsive from '../global_styles/responsive';
-import Player1 from '../containers/player1/player1';
-import Player2 from '../containers/player2/player2';
+import Player1 from './player1/player1';
+import Player2 from './player2/player2';
 
 class MainScreen extends Component {
   render() {
