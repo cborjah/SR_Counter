@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, StyleSheet, TextInput, TouchableHighlight, Dimensions, StatusBar } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableHighlight, Dimensions, StatusBar, Platform } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { setNames } from '../actions/gameSetup';
 
@@ -54,13 +54,15 @@ class GameSetup extends Component {
             />
           </View>
         </View>
-        <TouchableHighlight
-          style={styles.readyBtn}
-          onPress={() => this.handleOnPress()}
-          underlayColor='#40C4FF'
-          activeOpacity={0.9}>
-          <Text style={styles.readyBtnText}>READY</Text>
-        </TouchableHighlight>
+        <View style={styles.buttonContainer}>
+          <TouchableHighlight
+            style={styles.readyBtn}
+            onPress={() => this.handleOnPress()}
+            underlayColor='#40C4FF'
+            activeOpacity={0.9}>
+            <Text style={styles.readyBtnText}>READY</Text>
+          </TouchableHighlight>
+        </View>
       </View>
     );
   }
@@ -70,39 +72,32 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#424242',
+    backgroundColor: '#070d18'
   },
   inputContainer: {
-    flex: 11,
+    flex: 10,
     alignItems: 'center',
-
-    // alignSelf: 'stretch',
-    // paddingLeft: width * 0.1,
-    // paddingRight: width * 0.1,
-    // paddingTop: 10,
-    // paddingBottom: 10,
     justifyContent: 'center',
-    // alignItems: 'center',
-    // backgroundColor: 'purple'
+  },
+  buttonContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-start'
   },
   readyBtn: {
-    flex: 1,
+    width: Responsive.DEVICE_WIDTH / 1.19,
+    height: (Responsive.DEVICE_HEIGHT * 0.2) / 3,
     backgroundColor: '#0091EA',
     alignItems: 'center',
     justifyContent: 'center',
+    borderRadius: 2
   },
   readyBtnText: {
-    color: 'white',
+    fontSize: Responsive.FONT_SIZE_SMALLER,
+    ...Platform.select({ ios: { letterSpacing: 2.75 } }),
     fontWeight: '600', // Medium
-    // fontSize: 20 * PixelRatio.getFontScale(),
-    fontSize: Responsive.FONT_SIZE,
-    elevation: 2,
+    color: 'white',
   },
-  // textInput: {
-  //   color: '#FFFFFF',
-  //   fontSize: 30,
-  //   // textDecorationLine: 'none'
-  // }
 });
 
 export default connect(null, { setNames })(GameSetup);

@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
+    backgroundColor: '#070d18'
   },
   input: {
     flex: 11,

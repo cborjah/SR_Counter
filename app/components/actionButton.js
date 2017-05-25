@@ -48,11 +48,11 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: '#d34414',
     width: Responsive.DEVICE_WIDTH / 1.19,
+    height: (Responsive.DEVICE_HEIGHT * 0.2) / 3,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 2,
-    elevation: 10,
-    height: (Responsive.DEVICE_HEIGHT * 0.2) / 3
+    elevation: 10
   }
 });
 
