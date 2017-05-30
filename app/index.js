@@ -22,7 +22,7 @@ export default class App extends Component {
               key="gameSetup"
               component={GameSetup}
               hideNavBar={true}
-              // initial
+              initial
             />
 
             <Scene
@@ -35,8 +35,7 @@ export default class App extends Component {
               key="winScreen"
               component={WinScreen}
               hideNavBar={true}
-              winner={'Player 1'}
-              initial
+              winner={''}
             />
 
           </Scene>
