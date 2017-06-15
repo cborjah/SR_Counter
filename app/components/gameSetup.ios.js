@@ -5,6 +5,7 @@ import { Actions } from 'react-native-router-flux';
 import { setNames } from '../actions/gameSetup';
 
 import Responsive from '../global_styles/responsive';
+import FadeInView from './animations/fadeInView';
 
 class GameSetup extends Component {
   constructor(props) {
@@ -26,8 +27,11 @@ class GameSetup extends Component {
   render() {
     return (
       <View style={styles.container}>
+
       <StatusBar hidden />
-        <View style={styles.inputContainer}>
+
+        {/* <View style={styles.inputContainer}> */}
+        <FadeInView style={styles.inputContainer}>
           <View style={{ borderBottomWidth: 1, borderColor: '#40C4FF', marginBottom: (Responsive.DEVICE_HEIGHT * 0.3) / 2, width: Responsive.DEVICE_WIDTH * 0.8 }}>
             <TextInput
             style={{ height: (Responsive.DEVICE_HEIGHT * 0.15) / 2, color: '#FFFFFF', opacity: this.state.isFocused1 ? 1 : 0.5, fontSize: Responsive.FONT_SIZE }}
@@ -53,8 +57,11 @@ class GameSetup extends Component {
             autoCorrect={false}
             />
           </View>
-        </View>
-        <View style={styles.buttonContainer}>
+        </FadeInView>
+        {/* </View> */}
+
+        {/* <View style={styles.buttonContainer}> */}
+        <FadeInView style={styles.buttonContainer}>
           <TouchableHighlight
             style={styles.readyBtn}
             onPress={() => this.handleOnPress()}
@@ -62,7 +69,9 @@ class GameSetup extends Component {
             activeOpacity={0.9}>
             <Text style={styles.readyBtnText}>READY</Text>
           </TouchableHighlight>
-        </View>
+        </FadeInView>
+        {/* </View> */}
+
       </View>
     );
   }
