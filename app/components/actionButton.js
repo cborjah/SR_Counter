@@ -9,16 +9,26 @@ import Responsive from '../global_styles/responsive';
 
 class ActionButton extends Component {
   handleAttack() {
-    if(this.props.p1) {
-      this.props.p1Attacks(this.props.combatPoints);
-      this.props.setPage();
-    } else if (this.props.p2) {
-      this.props.p2Attacks(this.props.combatPoints);
-      this.props.setPage();
+    let { p1, p2, p1Attacks, p2Attacks, combatPoints, setPage } = this.props;
+
+    if (p1) {
+      p1Attacks(combatPoints);
+      setPage();
+    } else if (p2) {
+      p2Attacks(combatPoints);
+      setPage();
     }
+
+    // if (this.props.p1) {
+    //   this.props.p1Attacks(this.props.combatPoints);
+    //   this.props.setPage();
+    // } else if (this.props.p2) {
+    //   this.props.p2Attacks(this.props.combatPoints);
+    //   this.props.setPage();
+    // }
   }
 
-  render() {
+  render() {    
     return (
       <View style={styles.container}>
         <TouchableHighlight
@@ -26,7 +36,8 @@ class ActionButton extends Component {
           onPress={() => this.handleAttack()}
           underlayColor='#E57373'
           activeOpacity={0.9}>
-          <Text style={styles.text}>{this.props.combatPoints ? "ATTACK" : "END TURN"}</Text>
+          <Text style={styles.text}>{this.props.combatPoints ?
+              "ATTACK" : "END TURN"}</Text>
         </TouchableHighlight>
       </View>
     );
