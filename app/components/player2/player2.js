@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, StyleSheet, TouchableHighlight, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight, Dimensions }
+    from 'react-native';
 
 import P2Authority from './p2Authority';
 import P2Trade from './p2Trade';
@@ -18,38 +19,35 @@ class Player2 extends Component {
   render() {
     return (
       <View style={styles.player2}>
-
         <View style={styles.playerStats}>
-
           <View style={styles.statsTop}>
             <P2Authority />
             <P2Bases />
           </View>
-
           <View style={styles.statsBottom}>
             <P2Trade />
             <P2Combat />
           </View>
-
           <View style={styles.fabContainer}>
             <ActionButton
               combatPoints={this.props.combat}
               p1={false}
               p2={true}
-              setPage={() => {
-                this.props.changeTab();
-            }}/>
+              setPage={() => { this.props.changeTab(); }}
+            />
             <View style={styles.textContainer}>
-              <Text style={{ color: '#6c6f73', fontSize: Responsive.FONT_SIZE_SMALLER }}>History</Text>
+              <Text style={{
+                color: '#6c6f73',
+                fontSize: Responsive.FONT_SIZE_SMALLER
+              }}>
+                History
+              </Text>
             </View>
           </View>
-
         </View>
-
         <View style={styles.history}>
           <P2History />
         </View>
-
       </View>
     );
   }
@@ -57,42 +55,35 @@ class Player2 extends Component {
 
 const styles = StyleSheet.create({
   player2: {
-    flex: 1,
-    // backgroundColor: '#E0E0E0',
+    flex: 1
   },
   history: {
     height: Responsive.DEVICE_WIDTH * 0.1,
     backgroundColor: '#424242',
-    elevation: 5,
+    elevation: 5
   },
   playerStats: {
-    flex: 15,
-    // backgroundColor: '#76FF03'
+    flex: 15
   },
   statsTop: {
     flex: 1,
     flexDirection: 'row'
-    // backgroundColor: '#29B6F6'
   },
   statsBottom: {
     flex: 1,
     flexDirection: 'row'
-    // backgroundColor: '#4DB6AC',
   },
   statsText: {
-    fontSize: 50,
+    fontSize: 50
   },
   authority: {
     flex: 1,
     flexDirection: 'row'
-    // backgroundColor: '#757575',
   },
   fabContainer: {
-    height: Responsive.DEVICE_HEIGHT * 0.15,
-    // backgroundColor: 'blue'
+    height: Responsive.DEVICE_HEIGHT * 0.15
   },
   textContainer: {
-    // backgroundColor: 'white'
     paddingLeft: (Responsive.DEVICE_WIDTH * 0.1) / 5,
     paddingBottom: (Responsive.DEVICE_HEIGHT * 0.1) / 10
   }
