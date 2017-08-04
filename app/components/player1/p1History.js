@@ -8,9 +8,34 @@ class P1History extends Component {
 
   renderHistory() {
     return this.props.history.map((item, i) => {
+      const {
+        backgroundColor,
+        borderWidth,
+        borderColor,
+        color,
+        operator,
+        val
+      } = item;
+
       return (
-        <View key={i} style={[styles.container, (i === this.props.history.length - 1) ? { marginRight: 0 } : { marginRight: 2 }, { width: (Responsive.DEVICE_WIDTH * 0.25) / 2, backgroundColor: item.backgroundColor, borderWidth: item.borderWidth, borderColor: item.borderColor }]}>
-          <Text style={{ fontSize: Responsive.FONT_SIZE - 2, color: item.color }}>{item.operator + item.val}</Text>
+        <View
+          key={i}
+          style={[
+            styles.container, (i === this.props.history.length - 1) ?
+                { marginRight: 0 } : { marginRight: 2 },
+            {
+              width: (Responsive.DEVICE_WIDTH * 0.25) / 2,
+              backgroundColor: backgroundColor,
+              borderWidth: borderWidth,
+              borderColor: borderColor
+            }
+          ]}
+        >
+          <Text
+            style={{ fontSize: Responsive.FONT_SIZE - 2, color: item.color }}
+          >
+            {operator + val}
+          </Text>
         </View>
       );
     });
@@ -20,7 +45,12 @@ class P1History extends Component {
     let _scrollView: ScrollView;
 
     return (
-      <View style={{ flex: 1, borderStyle: 'solid', borderTopWidth: 0.5, borderTopColor: '#67696e' }}>
+      <View style={{
+        flex: 1,
+        borderStyle: 'solid',
+        borderTopWidth: 0.5,
+        borderTopColor: '#67696e'
+      }}>
         <ScrollView
           style={{ backgroundColor: '#181d26' }}
           horizontal={true}
@@ -39,7 +69,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'stretch',
-    marginRight: 2,
+    marginRight: 2
   }
 });
 
