@@ -66,6 +66,16 @@
                ReferencedContainer = "container:SR_Counter.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AAA38A4A1F32A2A00002440C"
+               BuildableName = "SR_CounterUITests.xctest"
+               BlueprintName = "SR_CounterUITests"
+               ReferencedContainer = "container:SR_Counter.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
