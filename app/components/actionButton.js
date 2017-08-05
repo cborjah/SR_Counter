@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, StyleSheet, TouchableHighlight, Dimensions, Platform } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight, Dimensions, Platform }
+    from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { p1Attacks } from '../actions/player1';
 import { p2Attacks } from '../actions/player2';
@@ -11,33 +12,27 @@ class ActionButton extends Component {
   handleAttack() {
     let { p1, p2, p1Attacks, p2Attacks, combatPoints, setPage } = this.props;
 
-    if (p1) {
+    if ( p1 ) {
       p1Attacks(combatPoints);
       setPage();
-    } else if (p2) {
+    } else if ( p2 ) {
       p2Attacks(combatPoints);
       setPage();
     }
-
-    // if (this.props.p1) {
-    //   this.props.p1Attacks(this.props.combatPoints);
-    //   this.props.setPage();
-    // } else if (this.props.p2) {
-    //   this.props.p2Attacks(this.props.combatPoints);
-    //   this.props.setPage();
-    // }
   }
 
-  render() {    
+  render() {
     return (
       <View style={styles.container}>
         <TouchableHighlight
           style={styles.button}
           onPress={() => this.handleAttack()}
-          underlayColor='#E57373'
-          activeOpacity={0.9}>
-          <Text style={styles.text}>{this.props.combatPoints ?
-              "ATTACK" : "END TURN"}</Text>
+          underlayColor="#E57373"
+          activeOpacity={0.9}
+        >
+          <Text style={styles.text}>
+            {this.props.combatPoints ? 'ATTACK' : 'END TURN'}
+          </Text>
         </TouchableHighlight>
       </View>
     );
@@ -52,7 +47,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: Responsive.FONT_SIZE_SMALLER,
-    ...Platform.select({ ios: { letterSpacing: 2.75 } }),
+        ...Platform.select({ ios: { letterSpacing: 2.75 } }),
     fontWeight: '600',
     color: 'white'
   },

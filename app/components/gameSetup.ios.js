@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, StyleSheet, TextInput, TouchableHighlight, Dimensions, StatusBar, Platform } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableHighlight, Dimensions,
+    StatusBar, Platform } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { setNames } from '../actions/gameSetup';
 
@@ -27,51 +28,61 @@ class GameSetup extends Component {
   render() {
     return (
       <View style={styles.container}>
-
       <StatusBar hidden />
-
-        {/* <View style={styles.inputContainer}> */}
         <FadeInView style={styles.inputContainer}>
-          <View style={{ borderBottomWidth: 1, borderColor: '#40C4FF', marginBottom: (Responsive.DEVICE_HEIGHT * 0.3) / 2, width: Responsive.DEVICE_WIDTH * 0.8 }}>
+          <View style={{
+            borderBottomWidth: 1,
+            borderColor: '#40C4FF',
+            marginBottom: (Responsive.DEVICE_HEIGHT * 0.3) / 2,
+            width: Responsive.DEVICE_WIDTH * 0.8
+          }}>
             <TextInput
-            style={{ height: (Responsive.DEVICE_HEIGHT * 0.15) / 2, color: '#FFFFFF', opacity: this.state.isFocused1 ? 1 : 0.5, fontSize: Responsive.FONT_SIZE }}
-            onFocus={() => this.setState({ isFocused1: true })}
-            onBlur={() => this.setState({ isFocused1: false })}
-            placeholder='PLAYER 1'
-            placeholderTextColor='#FFFFFF'
-            autoCapitalize='characters'
-            onChangeText={(text) => this.setState({input1: text})}
-            autoCorrect={false}
+              style={{
+                height: (Responsive.DEVICE_HEIGHT * 0.15) / 2,
+                color: "#FFFFFF",
+                opacity: this.state.isFocused1 ? 1 : 0.5,
+                fontSize: Responsive.FONT_SIZE
+              }}
+              onFocus={() => this.setState({ isFocused1: true })}
+              onBlur={() => this.setState({ isFocused1: false })}
+              placeholder="PLAYER 1"
+              placeholderTextColor="#FFFFFF"
+              autoCapitalize="characters"
+              onChangeText={(text) => this.setState({ input1: text })}
+              autoCorrect={false}
             />
           </View>
-
-          <View style={{ borderBottomWidth: 1, borderColor: '#40C4FF', width: Responsive.DEVICE_WIDTH * 0.8 }}>
+          <View style={{
+            borderBottomWidth: 1,
+            borderColor: '#40C4FF',
+            width: Responsive.DEVICE_WIDTH * 0.8
+          }}>
             <TextInput
-            style={{ height: (Responsive.DEVICE_HEIGHT * 0.15) / 2, color: '#FFFFFF', opacity: this.state.isFocused2 ? 1 : 0.5, fontSize: Responsive.FONT_SIZE }}
-            onFocus={() => this.setState({ isFocused2: true })}
-            onBlur={() => this.setState({ isFocused2: false })}
-            placeholder='PLAYER 2'
-            placeholderTextColor='#FFFFFF'
-            autoCapitalize='characters'
-            onChangeText={(text) => this.setState({input2: text})}
-            autoCorrect={false}
+              style={{
+                height: (Responsive.DEVICE_HEIGHT * 0.15) / 2,
+                color: "#FFFFFF",
+                opacity: this.state.isFocused2 ? 1 : 0.5,
+                fontSize: Responsive.FONT_SIZE
+              }}
+              onFocus={() => this.setState({ isFocused2: true })}
+              onBlur={() => this.setState({ isFocused2: false })}
+              placeholder="PLAYER 2"
+              placeholderTextColor="#FFFFFF"
+              autoCapitalize="characters"
+              onChangeText={(text) => this.setState({ input2: text })}
+              autoCorrect={false}
             />
           </View>
         </FadeInView>
-        {/* </View> */}
-
-        {/* <View style={styles.buttonContainer}> */}
         <FadeInView style={styles.buttonContainer}>
           <TouchableHighlight
             style={styles.readyBtn}
             onPress={() => this.handleOnPress()}
-            underlayColor='#40C4FF'
+            underlayColor="#40C4FF"
             activeOpacity={0.9}>
             <Text style={styles.readyBtnText}>READY</Text>
           </TouchableHighlight>
         </FadeInView>
-        {/* </View> */}
-
       </View>
     );
   }
@@ -86,7 +97,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     flex: 10,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   buttonContainer: {
     flex: 1,
@@ -105,7 +116,7 @@ const styles = StyleSheet.create({
     fontSize: Responsive.FONT_SIZE_SMALLER,
     ...Platform.select({ ios: { letterSpacing: 2.75 } }),
     fontWeight: '600', // Medium
-    color: 'white',
+    color: 'white'
   },
 });
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, StyleSheet, TouchableHighlight, Dimensions, StatusBar, Platform } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight, Dimensions, StatusBar,
+    Platform } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { newGame } from '../actions/newGame';
 
@@ -23,7 +24,7 @@ class WinScreen extends Component {
           <TouchableHighlight
             style={styles.button}
             onPress={() => this.handleNewGame()}
-            underlayColor='#40C4FF'
+            underlayColor="#40C4FF"
             activeOpacity={0.9}>
             <Text style={styles.buttonText}>NEW GAME</Text>
           </TouchableHighlight>
@@ -42,8 +43,6 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     flex: 10,
-    // backgroundColor: '#424242',
-    // alignSelf: 'stretch',
     alignItems: 'center',
     justifyContent: 'center'
   },
@@ -52,13 +51,11 @@ const styles = StyleSheet.create({
     color: '#FFFFFF'
   },
   buttonContainer: {
-    flex: 1,
-    // alignItems: 'flex-start'
-    // paddingTop: (Responsive.DEVICE_HEIGHT * 0.1) / 2
+    flex: 1
   },
   buttonText: {
     fontSize: Responsive.FONT_SIZE_SMALLER,
-    ...Platform.select({ ios: { letterSpacing: 2.75 } }),
+        ...Platform.select({ ios: { letterSpacing: 2.75 } }),
     textAlign: 'center',
     color: '#FFFFFF',
     fontWeight: "600" // Medium
