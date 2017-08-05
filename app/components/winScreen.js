@@ -18,7 +18,8 @@ class WinScreen extends Component {
       <View style={styles.container}>
         <StatusBar hidden />
         <View style={styles.textContainer}>
-          <Text style={styles.text}>{this.props.winner} Wins!</Text>
+          <Text style={styles.text}>{this.props.winner}</Text>
+          <Text style={styles.text}>Wins!</Text>
         </View>
         <View style={styles.buttonContainer}>
           <TouchableHighlight
